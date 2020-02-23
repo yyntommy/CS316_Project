@@ -1,0 +1,5 @@
+Ashley Murray: created sample dataset, helped create the load.sql
+Brandon Zhao: helped create the E/R diagram, write SQL queries
+Brandon Xie: write SQL queries for task 5
+Niko Hobart: made the create.sql file and load.sql
+Yuning Yang: helped create the E/R diagram, helped with create.sql and load.sql
