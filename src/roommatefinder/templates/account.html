@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div align='center'>
+    <h1 >Welcome to the page for {{current_user.name}}</h1>
+    <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
+    <p>{{ current_user.netid }}</p>
+  </div>
+</div>
+<div class="container">
+  <form  method="POST" action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.name.label(class="form-group") }}
+      {{form.name(class='form-control')  }}
+    </div
+    <div class="form-group">
+      {{ form.gender.label(class="form-group") }}
+      {{form.gender(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.year.label(class="form-group") }}
+      {{form.year(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.smoking.label(class="form-group") }}
+      {{form.smoking(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.sleeping.label(class="form-group") }}
+      {{form.sleeping(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.waking.label(class="form-group") }}
+      {{form.waking(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.room_utility.label(class="form-group") }}
+      {{form.room_utility(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.room_utility.label(class="form-group") }}
+      {{form.room_utility(class='form-control')  }}
+    </div>
+    <div class="form-group">
+      {{ form.on_campus.label(class="form-group") }}
+      {{ form.on_campus(class="form-control-file") }}
+    </div>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+
+</div>
+
+{% endblock content %}

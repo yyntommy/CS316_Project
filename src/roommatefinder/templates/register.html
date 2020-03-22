@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+  <form method="POST">
+    {{form.hidden_tag()}}
+    {{form.netid.label}}{{form.netid}}
+    {% for error in form.netid.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.password.label}}{{form.password}}
+    {% for error in form.password.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.pass_confirm.label}}{{form.pass_confirm}}
+    {% for error in form.pass_confirm.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.name.label}}{{form.name}}
+    {% for error in form.name.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.gender.label}}{{form.gender}}
+    {% for error in form.gender.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.year.label}}{{form.year}}
+    {% for error in form.year.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.smoking.label}}{{form.smoking}}
+    {% for error in form.smoking.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.sleeping.label}}{{form.sleeping}}
+    {% for error in form.sleeping.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.waking.label}}{{form.waking}}
+    {% for error in form.waking.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.room_utility.label}}{{form.room_utility}}
+    {% for error in form.room_utility.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.on_campus.label}}{{form.on_campus}}
+    {% for error in form.on_campus.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    {{form.submit()}}
+  </form>
+{% endblock %}
