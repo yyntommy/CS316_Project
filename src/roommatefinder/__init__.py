@@ -37,8 +37,10 @@ from roommatefinder.core.views import core
 from roommatefinder.users.views import users
 from roommatefinder.blog_posts.views import blog_posts
 from roommatefinder.error_pages.handlers import error_pages
+from roommatefinder.match.views import match
 
 app.register_blueprint(core)
 app.register_blueprint(blog_posts)
 app.register_blueprint(users)
 app.register_blueprint(error_pages)
+app.register_blueprint(match)
