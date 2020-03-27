@@ -46,6 +46,57 @@ class User(db.Model,UserMixin):
         return f"Username {self.netid}"
 
 
+class House(db.Model):
+
+    __tablename__ = 'house'
+
+    name = db.Column('name', db.String(100), nullable=False, primary_key=True)
+    building = db.Column('building', db.String(100),
+                        nullable=False, primary_key=True)
+
+
+class Major(db.Model):
+
+    __tablename__ = 'major'
+
+    name = db.Column('name', db.String(100), nullable=False, primary_key=True)
+    school = db.Column('school', db.String(100), nullable=False,
+                primary_key=True)
+
+
+class UserLikes(db.Model):
+
+    __tablename__ = 'userlikes'
+
+    netid = db.Column('netid', db.String(6),
+                    db.ForeignKey('users.netid'),
+                    nullable=False, primary_key=True)
+    housename = db.Column('housename', db.String(100),
+                    db.ForeignKey('house.name'),
+                    nullable=False, primary_key=True)
+    building = db.Column('building', db.String(100),
+                    db.ForeignKey('house.building'),
+                    nullable=False, primary_key=True)
+
+    def __repr__(self):
+        return f"Likes {self.housename} in {self.building}"
+
+
+class UserMajor(db.Model):
+
+    __tablename__ = 'usermajor'
+
+    netid = db.Column('netid', db.String(6),
+                    db.ForeignKey('users.netid'),
+                    nullable=False, primary_key=True)
+    major = db.Column('major', db.String(100),
+                    db.ForeignKey('major.name'),
+                    nullable=False)
+    school = db.Column('school', db.String(100),
+                    db.ForeignKey('major.school'),
+                    nullable=False)
+
+
 class BlogPost(db.Model):
 
     users = db.relationship(User)
