@@ -1,18 +1,16 @@
 # core/views.py
-from roommatefinder.models import BlogPost
+from roommatefinder.models import User
 from flask import render_template,request,Blueprint
 
 match = Blueprint('match',__name__)
 
-@match.route('/')
+@match.route('/match')
 def index():
     page = request.args.get('page',1,type=int)
-    blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page,per_page=5)
-    return render_template('index.html',blog_posts=blog_posts)
+    users = User.query.order_by(User.id.desc()).paginate(page=page,per_page=5)
+    return render_template('match.html',users=users, similarity=5)
 
-@match.route('/info')
-def info():
-    return render_template('info.html')
+
 
 
 # import numpy as np
@@ -90,7 +88,7 @@ def info():
 #             models.Users.gender.like(user.gender),
 #
 #             models.Users.smoking.like(user.smoking),
-# 
+#
 #             models.Users.on_campus.like(user.on_campus)
 #
 #         ).outerjoin(models.UserMajor).all()
