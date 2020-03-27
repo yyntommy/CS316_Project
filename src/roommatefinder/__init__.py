@@ -4,7 +4,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-
+from sqlalchemy.event import listen
+from roommatefinder.models import House, Major
+from sqlalchemy import event, DDL
 
 app = Flask(__name__)
 
@@ -27,6 +29,20 @@ login_manager = LoginManager()
 
 login_manager.init_app(app)
 login_manager.login_view = 'users.login'
+
+
+
+@event.listens_for(House.__table__, 'after_create')
+def insert_initial_values(*args, **kwargs):
+    db.session.add(House(name='Avalon', building='Kilgo'))
+    db.session.add(House(name='Banham', building='Edens'))
+    db.session.commit()
+
+@event.listens_for(Major.__table__, 'after_create')
+def insert_initial_values(*args, **kwargs):
+    db.session.add(House(name='Dance', school='Trinity College of Arts and Sciences'))
+    db.session.add(House(name='Economics', building='Trinity College of Arts and Sciences'))
+    db.session.commit()
 
 
 

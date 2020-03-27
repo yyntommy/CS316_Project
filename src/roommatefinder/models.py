@@ -54,6 +54,10 @@ class House(db.Model):
     building = db.Column('building', db.String(100),
                         nullable=False, primary_key=True)
 
+    def __init__(self,name,building):
+        self.name = name
+        self.buidling = building
+
 
 class Major(db.Model):
 
@@ -62,6 +66,10 @@ class Major(db.Model):
     name = db.Column('name', db.String(100), nullable=False, primary_key=True)
     school = db.Column('school', db.String(100), nullable=False,
                 primary_key=True)
+
+    def __init__(self,name,school):
+        self.name = name
+        self.school = school
 
 
 class UserLikes(db.Model):
@@ -77,6 +85,11 @@ class UserLikes(db.Model):
     building = db.Column('building', db.String(100),
                     db.ForeignKey('house.building'),
                     nullable=False, primary_key=True)
+
+    def __init__(self,netid,housename,building):
+        self.netid = netid
+        self.housename = housename
+        self.building = building
 
     def __repr__(self):
         return f"Likes {self.housename} in {self.building}"
@@ -95,6 +108,10 @@ class UserMajor(db.Model):
     school = db.Column('school', db.String(100),
                     db.ForeignKey('major.school'),
                     nullable=False)
+    def __init__(self,netid,major,school):
+        self.netid = netid
+        self.major = major
+        self.school = school
 
 
 class BlogPost(db.Model):
