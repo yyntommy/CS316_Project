@@ -11,8 +11,8 @@ IMPORTANT: The requirements.txt has been updated, so make sure to update your vi
 3. Add the {path to}\PostgreSQL\12\bin directory to your path variables
 4. Run the SQL Shell and enter in "create database data316proj"
 5. Open command prompt and navigate to your project folder. You should be in CS316_PROJECT. Then run the following commands:
-    psql -U postgres -h 127.0.0.1 -d data316proj -f ./create.sql
-    psql -U postgres -h 127.0.0.1 -d data316proj -f ./load.sql
+    * psql -U postgres -h 127.0.0.1 -d data316proj -f ./create.sql
+    * psql -U postgres -h 127.0.0.1 -d data316proj -f ./load.sql
 6. The database should now exist locally on your system. You can run the app without doing any migrations.
 
 If you have any difficulties, just text me or something --Niko
