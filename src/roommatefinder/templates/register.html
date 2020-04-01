@@ -1,29 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<style>
-
-    body {
-        background-color: #b3c3e6;
-    }
-.container{
-    position: relative;
-    top: 5px;
-    background: #f1f1f1;
-    max-width:500px;
-    border: 1px solid #012169;
-    box-shadow: 5px 5px #012169;
-}
-
-h1 {
-    text-shadow: 1px 1px 2px #012169;
-}
-
-
-</style>
-
 
 <html>
 <head>
+    <link rel = "stylesheet" type = "text/css" href= static/styles/register.css>
 </head>
 <body>
   <form method="POST">
@@ -119,5 +99,7 @@ h1 {
     {{form.submit()}}
   </form>
 </body>
+<br>
+<br>
 </html>
 {% endblock %}
