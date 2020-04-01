@@ -7,7 +7,9 @@ CREATE TABLE Users
  sleeping TIME NOT NULL,
  waking TIME NOT NULL,
  room_utility VARCHAR(6) NOT NULL CHECK(room_utility IN ('Study', 'Social')),
- on_campus VARCHAR(3) NOT NULL CHECK(on_campus IN ('Y', 'N')));
+ on_campus VARCHAR(3) NOT NULL CHECK(on_campus IN ('Y', 'N')),
+ profile_image VARCHAR(64) NOT NULL,
+ password_hash VARCHAR(128));
 
 CREATE TABLE House
 (name VARCHAR(100) NOT NULL,
@@ -34,6 +36,13 @@ CREATE TABLE UserLikes
  REFERENCES House(name, building),
  PRIMARY KEY(netid, housename, building));
 
+CREATE TABLE Blog_Post
+(id INTEGER NOT NULL PRIMARY KEY,
+ user_id VARCHAR(6) NOT NULL REFERENCES Users(netid),
+ "date" TIMESTAMP NOT NULL,
+ title VARCHAR(140) NOT NULL,
+ "text" TEXT NOT NULL);
+
 
 -- Users can be linked to no more than four housing chocies
 CREATE FUNCTION TF_Five_Housing_Choices() RETURNS TRIGGER AS $$
@@ -57,7 +66,7 @@ BEGIN
     THEN RAISE EXCEPTION 'if user prefers off campus, cannot have preferences of on-campus housing.';
     END IF;
     RETURN NEW;
-END; 
+END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER TG_OffCampusLimit

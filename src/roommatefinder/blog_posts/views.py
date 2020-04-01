@@ -17,7 +17,8 @@ def create_post():
 
         blog_post = BlogPost(title=form.title.data,
                             text=form.text.data,
-                            user_id=current_user.id
+                            user_id=current_user.netid,
+                            id=len(db.session.query(BlogPost).all())+1
                             )
         db.session.add(blog_post)
         db.session.commit()

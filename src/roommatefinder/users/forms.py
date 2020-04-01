@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Log In')
 
 class RegistrationForm(FlaskForm):
-    
+
     netid = StringField('netid',validators=[DataRequired()])
     name = StringField('name', validators=[DataRequired()])
     gender = SelectField('gender:',
@@ -23,11 +23,11 @@ class RegistrationForm(FlaskForm):
     smoking = SelectField('Do you smoke?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
     sleeping = SelectField('What time do you go to bed?',
-                        choices=[('10','10PM'), ('12','12AM'), ('2', '2AM')], validators=[DataRequired()])
+                        choices=[('22:00','10PM'), ('00:00','12AM'), ('2:00', '2AM')], validators=[DataRequired()])
     waking = SelectField('What time do you generally wake up?',
-                        choices=[('8','8AM'), ('10','10AM'), ('12', '12PM')], validators=[DataRequired()])
+                        choices=[('8:00','8AM'), ('10:00','10AM'), ('24:00', '12PM')], validators=[DataRequired()])
     room_utility = SelectField('What is your room utility?',
-                        choices=[('study','study'), ('social','social')], validators=[DataRequired()])
+                        choices=[('Study','study'), ('Social','social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
     password = PasswordField('Password',validators=[DataRequired(),EqualTo('pass_confirm', message='Passwords must match!')])
