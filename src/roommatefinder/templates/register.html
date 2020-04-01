@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <style>
-    body {
-        background-image: url('https://image.freepik.com/free-vector/millennial-student-dorm-room_24640-50016.jpg');
-    }
 
+    body {
+        background-color: #b3c3e6;
+    }
 .container{
     position: relative;
-    top: 100px;
+    top: 5px;
     background: #f1f1f1;
-    max-width:800px;
+    max-width:500px;
+    border: 1px solid #012169;
+    box-shadow: 5px 5px #012169;
 }
 
 h1 {
@@ -27,73 +29,93 @@ h1 {
   <form method="POST">
     <h1>Registration</h1>
     {{form.hidden_tag()}}
-    {{form.netid.label}}{{form.netid()}}
+    {{form.netid.label}}
     <br>
-    
+    {{form.netid()}}
+    <br>
     {% for error in form.netid.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.password.label}}<span style="right:900px;">{{form.password()}}</span>
+    {{form.password.label}}
     <br>
-    
+    {{form.password()}}
+    <br>
     {% for error in form.password.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.pass_confirm.label}}{{form.pass_confirm}}
+    {{form.pass_confirm.label}}
+    <br>
+    {{form.pass_confirm}}
     <br>
     
     {% for error in form.pass_confirm.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.name.label}}{{form.name}}
+    {{form.name.label}}
     <br>
-    
+    {{form.name}}
+    <br>
     {% for error in form.name.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.gender.label}}{{form.gender}}
+    {{form.gender.label}}
     <br>
-    
+    {{form.gender}}
+    <br>
     {% for error in form.gender.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.year.label}}{{form.year}}
+    {{form.year.label}}
     <br>
-    
+    {{form.year}}
+    <br>
     {% for error in form.year.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.smoking.label}}{{form.smoking}}
+    {{form.smoking.label}}
+    <br>
+    {{form.smoking}}
     <br>
     
     {% for error in form.smoking.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.sleeping.label}}{{form.sleeping}}
+    {{form.sleeping.label}}
+    <br>
+    {{form.sleeping}}
     <br>
     
     {% for error in form.sleeping.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.waking.label}}{{form.waking}}
+    {{form.waking.label}}
+    <br>
+    {{form.waking}}
     <br>
     
     {% for error in form.waking.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.room_utility.label}}{{form.room_utility}}
+    {{form.room_utility.label}}
+    <br>
+    {{form.room_utility}}
     <br>
     
     {% for error in form.room_utility.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.on_campus.label}}{{form.on_campus}}
+    {{form.on_campus.label}}
+    <br>
+    {{form.on_campus}}
     
     <br>
     
     {% for error in form.on_campus.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
+    
+    <br>
+    
     {{form.submit()}}
   </form>
 </body>
