@@ -21,12 +21,12 @@ def index():
     # NOTE: THIS DOESN'T ACTUALLY WORK AS FAR AS DISPLAYING MATCHES GOES BECAUSE IT DISPLAYS THE MATCHES OUT OF ORDER AND ALSO JUST DISPLAYS A LIST OF THE SIMILARITIES IN THE SIMILARITIES AREA
 
     page = request.args.get('page',1,type=int)
-    ideals = find_matches(current_user.netid, 100)
-    ideal_netids = [ideal[0] for ideal in ideals]
-    users = User.query.filter(User.netid.in_(ideal_netids)).paginate(page=page,per_page=5)
-    return render_template('match.html',users=users, similarity=[ideal[1] for ideal in ideals])
+    users = find_matches(current_user.netid, 100)
+    return render_template('match.html',users=users)
 
 
+def getKey(item):
+    return item[2]
 
 def cos_sim(a, b):
     """Takes 2 vectors a, b and returns the cosine similarity according to the definition of the dot product
@@ -67,7 +67,7 @@ def find_matches(netid, num):
         ).outerjoin(UserMajor).all()
 
     # Create dictionary of netid:score, loop through all potentials to create score
-    score_tracker = dict()
+    score_tracker = []
     for potential in potentials:
 
         # Calculate major score partition 15%
@@ -107,18 +107,14 @@ def find_matches(netid, num):
         overallscore = (.15 * majorscore + .15 * yearscore +
                             .4 * timescore + .3 * prefscore)
 
-        score_tracker[potential[0].netid] = overallscore
+        score_tracker.append((potential[0].netid, potential[0].name, overallscore))
 
-    # Sort dictionary to output best num roommates
-    new_tracker = {k:v for k,v in
-        sorted(score_tracker.items(), reverse=True, key=lambda item: item[1])}
-
-    # Create list of tuples
     tuple_matches = []
     index = 0
-    for netid,score in new_tracker.items():
+    for item in score_tracker:
         if (index >= num): break
-        tuple_matches.append((netid, score))
+        tuple_matches.append(item)
         index += 1
 
+    tuple_matches = sorted(tuple_matches, reverse=True, key=getKey)
     return tuple_matches
