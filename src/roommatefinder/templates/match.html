@@ -14,7 +14,7 @@
       <div class="card-body">
 
 
-        <h2><a class="card-title" href="  {{ url_for('users.user_posts', netid=user[1]) }}">{{ user[1] }}</a></h2>
+        <h2><a class="card-title" href="  {{ url_for('users.user_posts', netid=user[0]) }}">{{ user[1] }}</a></h2>
         <p>NetID: {{ user[0] }}</p>
         <p>Similarity: {{ user[2] }}</p>
       </div>
