@@ -8,6 +8,132 @@
     <p>{{ current_user.netid }}</p>
   </div>
 </div>
+
+<div class="row">
+  <div class="form-group col-xs-6">
+    <label for="all_classes">Select a building</label>
+    <select class="form-control" id="all_classes">
+      {% for o in all_classes %}
+              <option value="{{ o }}">{{ o }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group col-xs-6">
+    <label for="all_entries">Select a house</label>
+    <select class="form-control" id="all_entries">
+      {% for o in all_entries %}
+              <option value="{{ o }}">{{ o }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+<div>
+  <button type="button" id="process_input">Add housing preference</button>
+</div>
+
+{% for userlike in userlikes %}
+
+<div class="card" >
+
+  <div class="card-body">
+    <p>Building: {{ userlike.building }}</p>
+    <p>House: {{ userlike.housename }}</p>
+  </div>
+</div>
+
+{% endfor %}
+
+<div class="row">
+  <div class="form-group col-xs-6">
+    <label for="all_classes">Select a school</label>
+    <select class="form-control" id="all_classes_major">
+      {% for o in all_classes_major %}
+              <option value="{{ o }}">{{ o }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group col-xs-6">
+    <label for="all_entries">Select a major</label>
+    <select class="form-control" id="all_entries_major">
+      {% for o in all_entries_major %}
+              <option value="{{ o }}">{{ o }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+<div>
+  <button type="button" id="process_input_major">Add your major</button>
+</div>
+
+{% for usermajor in usermajors %}
+
+<div class="card" >
+
+  <div class="card-body">
+    <p>School: {{ usermajor.school }}</p>
+    <p>Major: {{ usermajor.major }}</p>
+  </div>
+</div>
+
+{% endfor %}
+
+<br>
+<script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#all_classes').change(function(){
+
+      $.getJSON('/_update_dropdown', {
+        selected_class: $('#all_classes').val()
+
+      }).success(function(data) {
+            $('#all_entries').html(data.html_string_selected);
+       })
+    });
+    $('#process_input').bind('click', function() {
+
+        $.getJSON('/_process_data', {
+            selected_class: $('#all_classes').val(),
+            selected_entry: $('#all_entries').val(),
+
+
+        }).success(function(data) {
+            window.location.href = data.url
+        })
+      return false;
+
+    });
+    $('#all_classes_major').change(function(){
+
+      $.getJSON('/_update_dropdown_major', {
+        selected_class: $('#all_classes_major').val()
+
+      }).success(function(data) {
+            $('#all_entries_major').html(data.html_string_selected);
+       })
+    });
+    $('#process_input_major').bind('click', function() {
+
+        $.getJSON('/_process_data_major', {
+            selected_class: $('#all_classes_major').val(),
+            selected_entry: $('#all_entries_major').val(),
+
+
+        }).success(function(data) {
+            window.location.href = data.url
+        })
+      return false;
+
+    });
+  });
+</script>
+
+
+
 <div class="container">
   <form  method="POST" action="" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
@@ -34,10 +160,6 @@
     <div class="form-group">
       {{ form.waking.label(class="form-group") }}
       {{form.waking(class='form-control')  }}
-    </div>
-    <div class="form-group">
-      {{ form.room_utility.label(class="form-group") }}
-      {{form.room_utility(class='form-control')  }}
     </div>
     <div class="form-group">
       {{ form.room_utility.label(class="form-group") }}
