@@ -101,7 +101,7 @@ def find_matches(netid, num):
             .filter(UserLikes.netid == potential[0].netid).all()
         if (not (len(user_pref)==0 or len(potential_pref)==0) ):
             a, b = wordvectorizer(user_pref, potential_pref)
-            prefscore = cos_sim()
+            prefscore = cos_sim(a,b)
         else: prefscore = 1
 
         overallscore = (.15 * majorscore + .15 * yearscore +

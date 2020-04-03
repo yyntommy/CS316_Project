@@ -1,8 +1,6 @@
 # Find my roommate
 
-Updated README.md as of 4/1/20:
-
-The matching algorithm has been integrated and works with the current database, now it just needs to have an actual page in the app.
+Updated README.md as of 4/2/20:
 
 IMPORTANT: The requirements.txt has been updated, so make sure to update your virtual env. Also, we've moved away from SQLite and are now using PostgreSQL. To make sure your app can run, do the following (this assumes you're using Windows, but the process is similar on other OS'):
 
@@ -13,6 +11,7 @@ IMPORTANT: The requirements.txt has been updated, so make sure to update your vi
 5. Open command prompt and navigate to your project folder. You should be in CS316_PROJECT. Then run the following commands:
     * psql -U postgres -h 127.0.0.1 -d data316proj -f ./create.sql
     * psql -U postgres -h 127.0.0.1 -d data316proj -f ./load.sql
+    * psql -U postgres -h 127.0.0.1 -d data316proj -f ./load2.sql
 6. The database should now exist locally on your system. You can run the app without doing any migrations.
 
 If you have any difficulties, just text me or something --Niko
