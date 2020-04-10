@@ -1,7 +1,21 @@
 body {
         background-image: url("https://lh3.googleusercontent.com/ugxBqcBMcR-UoBzqs-RWg1cZogOA1RloJYSrOgwETQ4-knLhnl_YOOWPcMCM4cyHGIn2QNF1sXO7VLVoxn5gZESmaFBVgbETaMQQew-hDDzXMpr3-B4G-qmMLKEjNCMlgFaUrkV_5jvMstB4Xhu-kbhOHKzuF46RuC-mPyJF8OJPUEz09XXi2HtUoQ9wcXYCjpK2eBikPhBnRI9yH3slLSAApQxTJ0SH5FxhXyjFn0aT6ELaOeXAl2r5NAxmInk53zBcVcj8MMAyrLh53jlbz3X70yS0KqRgXY6juSpsxh3zGzQct3vlSQwZLmLCL3NadbPsr4Gz730qeIp_5G_W_IjZoARYuDE5w4zwG1wuiJ8JJBgJS9SZ6WECU5id5oq_9X8HTDL6DOmCFk7C4TPWKPXaEXXLMFpVGxfX-j67BCDuFEz103LSgerTvvIyi2OfBXgfFIiA7M12D-nxYwY8I60Q0gYDigGa4ElbX9PlsaI5raOjfz-9cEm0OHq5Z-2gQKGOwSRDg56jtKHDlqPI0s8T3BoJ371CRIA25rfgsUNzVXJVQxCmAS-7yAdznYBdM8u06os0HV3UAP4uoh5ZdYBxSp20xP3O6CjmDx2WaYZ098pJNPUCWM6F8tH0TklONgWrko3muDveCbPKPKVuh7Kh_i5VYcS3wZlvsUKqCTwOthIpcXKiqXqOOsgK=w2392-h1674-no");
-	background-size: 100px 100px;
+	background-size: 1920px 1080px;
+    background-repeat: no-repeat;
     }
+
+.container{
+    position: relative;
+    top: 5px;
+    background: #f1f1f1;
+    max-width:500px;
+    border: 1px solid #012169;
+    box-shadow: 5px 5px #012169;
+}
+
+h1 {
+    text-shadow: 1px 1px 2px #012169;
+}
 
 .container{
     position: relative;
