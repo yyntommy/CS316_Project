@@ -1,35 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<style>
-    body {
-        background-image: url('https://lh3.googleusercontent.com/MbR7UU-c409XR5974cv48mJ-L90k7YYfnOJjFNAiyGvKugfbrdmWkgCAph_h4oWvX297OzxO2m8YSRGWBm61XA48rvbk7EFR4x2hiox2NFPCXZju5k_mfl9bIE5K2cZ8pYK138SOaucLxRPNF1j3X7oD2Y2LUN3DHTVgoO7uXdpLIw82lqmt00Cve4GTppJN8CfGm4Lp3BAkD5p6Gm70RWmSD2dy_qrPCM3WxBd3zMBzGwW6Q1YqgP4eUzmGvNT2CzXPXWEn0dUWHpib4rbHPyFnMuQQyrsu56kcoLLBjj6yiUcLZSqrnwZIdn354jgxdqTgfSCeaYnLnPc6uUjRG0-bWtQlVeHnimQMWCFvic2OcY9mejCz-D5BOMsF27zLwfZOSv6UQuJGS0q1ZwMuvgm0jFgv1SE9zzWnblUVCdnSHUw5itd9Whg7PL21JTFzvCNvtxR7wK7tc6Q8e-qjNh9U6JlB86974hoa8Hng6KObMpMpn75IHy7yAq_P3g8mRNS1EgQ3IJXN8ZngOOnB0t_cxoWeVJV22cSZENbiX64Onh4rbEcCbt_qbyPHFLndwjfrsmu4L1YXYRq8FTKKiwOgypwazYa0ypoKOwwRw6IGosTLzyyznpuuLcQRqBpBDrTU1drYNtoQHilQawMzLbH_PkLjxi9qlF5FDNcZEyLlQqHGilpdCSAoj-pW=w1200-h1600-no');
-    }
-.container {
-    position: relative;
-    top: 100px;
-    right: 500px;
-    background: #f1f1f1;
-    max-width: 400px;
-    max-height: 500px;
-    border: 1px solid #012169;
-    box-shadow: 5px 5px #012169;
-}
-
-h1{
-    text-shadow: 1px 1px 2px #012169;
-}
-
-</style>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = static/styles/login.css>
+    </head>
+<body>
   <form method="POST">
     <h1>Student Login</h1>
     {{form.hidden_tag()}}
     <p>
     <span>{{form.netid.label}}</span>&nbsp&nbsp{{form.netid(size=32)}}<br>
+    <br>
     <span>{{form.password.label}}</span>&nbsp&nbsp{{form.password(size=29)}}<br>
+    <br>
     {{form.submit()}}
     </p>
   </form>
-
+</body>
+</html>
 {% endblock %}
 
 
