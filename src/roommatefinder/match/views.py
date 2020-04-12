@@ -1,10 +1,11 @@
 # core/views.py
 from roommatefinder import db
 from roommatefinder.models import User, UserMajor, UserLikes
-from flask import render_template,request,Blueprint
+from flask import render_template,url_for,flash,redirect,request,Blueprint, jsonify
 from flask_login import current_user
 import numpy as np
 from datetime import datetime, timedelta
+from roommatefinder.match.forms import FilterForm
 
 
 match = Blueprint('match',__name__)
@@ -15,14 +16,52 @@ match = Blueprint('match',__name__)
 #     users = User.query.order_by(User.netid.desc()).paginate(page=page,per_page=5)
 #     return render_template('match.html',users=users, similarity=5)
 
-@match.route('/match')
+@match.route('/match', methods=['GET', 'POST'])
 def index():
-
-    # NOTE: THIS DOESN'T ACTUALLY WORK AS FAR AS DISPLAYING MATCHES GOES BECAUSE IT DISPLAYS THE MATCHES OUT OF ORDER AND ALSO JUST DISPLAYS A LIST OF THE SIMILARITIES IN THE SIMILARITIES AREA
-
     page = request.args.get('page',1,type=int)
     users = find_matches(current_user.netid, 100)
-    return render_template('match.html',users=users)
+    filter = {'year_from': '2020',
+              'year_to': '2024',
+              'sleeping_from': '22:00',
+              'sleeping_to': '2:00',
+              'waking_from': '8:00',
+              'waking_to': '12:00'}
+    form = FilterForm()
+    if form.validate_on_submit():
+        filter['year_from'] = form.year_from.data
+        filter['year_to'] = form.year_to.data
+        filter['sleeping_from'] = form.sleeping_from.data
+        filter['sleeping_to'] = form.sleeping_to.data
+        filter['waking_from'] = form.waking_from.data
+        filter['waking_to'] = form.waking_to.data
+        users = filters(users,filter)
+        return render_template('match.html',users=users, form=form)
+
+
+    return render_template('match.html',users=users, form=form)
+
+
+
+def time_format(time):
+    time = str(time)
+    if len(time) < 6:
+        time = time + ":00"
+    time = datetime.strptime(time, '%H:%M:%S').time()
+    flag = datetime(1,1,1,0,0,0)
+    if str(time) >= '19:00:00':
+        return (datetime.combine(datetime(1,1,1),time) - flag).total_seconds()
+    else:
+        return (datetime.combine(datetime(1,1,2),time) - flag).total_seconds()
+
+def filters(users, filter):
+    tuple_matches = []
+    for user in users:
+        current = db.session.query(User).filter(User.netid == user[0])[0]
+        if int(filter['year_from']) > current.year or int(filter['year_to']) < current.year: continue
+        if time_format(filter['sleeping_from']) > time_format(current.sleeping) or time_format(filter['sleeping_to']) < time_format(current.sleeping): continue
+        if time_format(filter['waking_from']) > time_format(current.waking) or time_format(filter['waking_to']) < time_format(current.waking): continue
+        tuple_matches.append(user)
+    return tuple_matches
 
 
 def getKey(item):
