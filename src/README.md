@@ -7,7 +7,7 @@ IMPORTANT: The requirements.txt has been updated, so make sure to update your vi
 1. Pull changes, and make sure the migrations directory and data.sqlite file are deleted.
 2. Install postgresql off the web--when making the default "postgres" account, assign the password to also be "postgres" unless you're willing to change the SQLALCHEMY_DATABASE_URI locally
 3. Add the {path to}\PostgreSQL\12\bin directory to your path variables
-4. Run the SQL Shell and enter in "create database data316proj"
+4. Run the SQL Shell and enter in "create database data316proj;"
 5. Open command prompt and navigate to your project folder. You should be in CS316_PROJECT. Then run the following commands:
     * psql -U postgres -h 127.0.0.1 -d data316proj -f ./create.sql
     * psql -U postgres -h 127.0.0.1 -d data316proj -f ./load.sql
