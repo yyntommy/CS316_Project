@@ -146,7 +146,7 @@ def find_matches(netid, num):
         overallscore = (.15 * majorscore + .15 * yearscore +
                             .4 * timescore + .3 * prefscore)
 
-        score_tracker.append((potential[0].netid, potential[0].name, overallscore))
+        score_tracker.append((potential[0].netid, potential[0].name, 100*round(overallscore, 4)))
 
     tuple_matches = []
     index = 0
