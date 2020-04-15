@@ -3,22 +3,25 @@
 
 <html>
     <head>
-        <img src="static/profile_pics/icon_edited.png" style="width:700px;height:250px;position:relative;top:50px;">
+
+        <link rel="stylesheet" type = "text/css" href = static/styles/index3.css>
+
+         <img src="static/profile_pics/icon_edited.png" style="
+                   background-color: papayawhip;
+                   background-position: center;
+                   width:700px;height:250px;position:relative;right:-200px;top:50px;">
 
     </head>
-<body> </body>
+    
   <div style="background:transparent !important" class="jumbotron"/>
   <p>Welcome to Find Your Roommate. We help match you to a new roommate right here at Duke!</p>
   </div>
 
   <div class="container">
-
     {% for post in blog_posts.items %}
     <div class="card" >
 
       <div class="card-body">
-
-
         <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
         <a href="{{ url_for('users.user_posts', netid=post.author.netid) }}">Written By: {{ post.author.netid }}</a>
         <p>Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
@@ -41,7 +44,36 @@
           {% endif %}
       {% endfor %}
     </nav>
+   <body style="background:linear-gradient(#e6ffff, white) !important;">
+       
+       <div style="background-color:lightyellow; flex:50%" class="reviews">
+       <h1><strong>Recent Find Your Roommate Reviews</strong></h1>
+       <br>
+       <p>"Literally the best website ever created for Duke students!" -Ben Stiller</p>
+       <br>
+       <p>"I found the love of my life. I went in looking for a roommate who doesn't smoke, and I left with the best match of my Duke career...and forever." -George Lopez</p>
+       </div>
+    <br>
+    <br>
+       <div style="background-color:papayawhip; flex:50%; height:250px; width:400px;" class="resources">
+<h1><strong>Resources</strong></h1>
+<br>
+<h5>Other sites that you may find helpful:</h5>
+<br>
+<a href="https://duke.edu" target="_blank">Duke University's Official Website</a>
+<br>
+<a href="https://www.facebook.com/DukeUniv/" target="_blank">Duke University's Official Facebook Page</a>
+<br>
+<a href="https://www.facebook.com/groups/Official-Duke-University-Class-of-2021-Facebook-Group-2169268529965920/" target="_blank">Official Duke University Class of 2021 Facebook Group</a>
+<br>
+<a href="https://www.tripadvisor.com/Restaurants-g49092-Durham_North_Carolina.html" target="_blank">Top Ten Best Restaurants in Durham</a>
+</div>
 
+<br>
+
+
+</body>
 
 
 {% endblock %}
+
