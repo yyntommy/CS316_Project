@@ -1,7 +1,6 @@
 body {
-    background-image: url(styles/profile_pics/chapeledit.jpg);
 	background-color: background-color: #b3c3e6;
-
+    background-image: url('/static/profile_pics/chapeledit.jpg');
 }
 
 submit {

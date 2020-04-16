@@ -4,22 +4,27 @@
 <html>
     <head>
 
-        <link rel="stylesheet" type = "text/css" href = static/styles/index5.css>
-
          <img src="static/profile_pics/icon_edited.png" style="
                    background-color: lightyellow;
                    background-position: center;
-                   width:700px;height:250px;position:relative;right:-200px;top:50px;
-                   position:relative;
+                   width:700px;height:250px;position:relative;
+                   right:-200px;top:50px;
                    ">
+                   <div style="background-color:papayawhip; width:200px;
+                   height:170px;
+                   position: relative;
+                   right:-550px;
+                   top:150px;
+                   margin-top: -100px;
+                   margin-left: -100px; " class="welcome">
+                        <p>Welcome to Find Your Roommate. We help match you to a new roommate right here at Duke! Register an account with us and get your roommate match immediately.</p>
+                    </div>
+                   
     </head>
     
 
-  <div style="background:papayawhip !important; border:2px solid lightgrey; background-size: 200px 100px !important;" class="jumbotron"/>
-  <br>
-  <div style="right:0px; top:-100px; position:absolute;" class="welcome">
-      <p>Welcome to Find Your Roommate. We help match you to a new roommate right here at Duke! Register an account with us and get your roommate match immediately.</p>
-  </div>
+  <div style="background-color:transparent !important;" class="jumbotron"/>
+
   </div>
 
   <div class="container">
@@ -55,39 +60,13 @@
    <body style="background:linear-gradient(#e6ffff, white) !important;">
     
     <div class="chapelicon">
-        <img src="static/profile_pics/transparent.png" style="width:20%; height:20%; position:relative; top:-250px;">
+        <img src="static/profile_pics/transparent.png" style="width:20%; height:20%; position:relative; top:-250px;float:left;">
         </div>
     
-    <div class="searchicon">
-        <img src="static/profile_pics/search.png" style="top:-400px; width:10%; height:10%; position:relative; right:-850px;">
-            </div>
     
-    <div class="time">
-        <div style="text-align:center;" class= "textforcountdown">
-           <h5>Countdown to First Day of Class!</h5>
-           </div>
-        <div style="text-align:center;"class="actualscript">
-       <p id="demo"></p>
-          <script>
-          var countDownDate = new Date("Aug 24, 2020 15:37:25").getTime();
-          var x = setInterval(function()
-
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-            if (distance < 0) {
-              clearInterval(x);
-              document.getElementById("demo").innerHTML = "EXPIRED";
-            }
-          }, 1000);
-          </script>
-          </div>
-          </div>
+    <div class="searchicon">
+        <img src="static/profile_pics/search.png" style="top:-150px; width:10%; height:10%; position:relative; float:right; right:100px;">
+            </div>
        <br>
        <br>
        
@@ -122,11 +101,6 @@
 
     
     <style>
-        .jumbotron{
-            height:10px !important;
-            width:400px;
-            margin:0 auto;
-        }
     
     .welcome{
         text-align:center;
