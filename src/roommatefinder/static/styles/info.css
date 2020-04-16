@@ -1,4 +1,8 @@
-.container {
-    top: 30px;
-    background-color:#012169;;
+div {
+	margin-top:10px;
 }
+
+.reviewtext {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
