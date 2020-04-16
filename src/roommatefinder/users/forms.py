@@ -26,7 +26,7 @@ class RegistrationForm(FlaskForm):
                         choices=[('22:00','22:00'), ('00:00','00:00'), ('2:00', '2:00')], validators=[DataRequired()])
     waking = SelectField('What time do you usually wake up?',
                         choices=[('8:00','8:00'), ('10:00','10:00'), ('12:00', '12:00')], validators=[DataRequired()])
-    room_utility = SelectField('Do you see the room as more of a social or study place?'),
+    room_utility = SelectField('Do you see the room as more of a social or study place?',
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
@@ -51,7 +51,7 @@ class UpdateUserForm(FlaskForm):
                         choices=[('22:00','22:00'), ('00:00','00:00'), ('2:00', '2:00')], validators=[DataRequired()])
     waking = SelectField('What time do you usually wake up?',
                         choices=[('8:00','8:00'), ('10:00','10:00'), ('12:00', '12:00')], validators=[DataRequired()])
-    room_utility = SelectField('Do you see the room as more of a social or study place?'),
+    room_utility = SelectField('Do you see the room as more of a social or study place?',
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
