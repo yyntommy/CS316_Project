@@ -16,6 +16,11 @@ IMPORTANT: The requirements.txt has been updated, so make sure to update your vi
 
 If you have any difficulties, just text me or something --Niko
 
+Tips (for Mac users):
+There may be some issues downloading PostgreSQL onto your local machine if you have a Mac. One way to get around some of the issues is to download homebrew. See https://brew.sh on how to install homebrew.
+
+After installing homebrew, run brew doctor to make sure everything will work correctly. Then, type brew install postgresql into your terminal. Add /usr/local/Cellar/postgresql/12.2/bin into your local directory by running the command sudo nano /etc/paths and adding it at the end of the paths list. Finally, run the commands above to create the database.
+
 
 3/22/20:
 
