@@ -58,8 +58,12 @@ def filters(users, filter):
     for user in users:
         current = db.session.query(User).filter(User.netid == user[0])[0]
         if int(filter['year_from']) > current.year or int(filter['year_to']) < current.year: continue
-        if time_format(filter['sleeping_from']) > time_format(current.sleeping) or time_format(filter['sleeping_to']) < time_format(current.sleeping): continue
-        if time_format(filter['waking_from']) > time_format(current.waking) or time_format(filter['waking_to']) < time_format(current.waking): continue
+        if time_format(filter['sleeping_from']) > time_format(current.sleeping) or time_format(filter['sleeping_to']) < time_format(current.sleeping):
+            print(filter['sleeping_from'])
+            continue
+        if time_format(filter['waking_from']) > time_format(current.waking) or time_format(filter['waking_to']) < time_format(current.waking): 
+            print(filter['waking_from'])
+            continue
         tuple_matches.append(user)
     return tuple_matches
 

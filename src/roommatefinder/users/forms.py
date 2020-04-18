@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import ValidationError
+from wtforms_components import TimeField
 from flask_wtf.file import FileField,FileAllowed
 
 from flask_login import current_user
@@ -22,10 +23,8 @@ class RegistrationForm(FlaskForm):
                         choices=[('2020','2020'), ('2021','2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024')], validators=[DataRequired()])
     smoking = SelectField('Do you smoke?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
-    sleeping = SelectField('What time do you usually go to bed?',
-                        choices=[('22:00','22:00'), ('00:00','00:00'), ('2:00', '2:00')], validators=[DataRequired()])
-    waking = SelectField('What time do you usually wake up?',
-                        choices=[('8:00','8:00'), ('10:00','10:00'), ('12:00', '12:00')], validators=[DataRequired()])
+    sleeping = TimeField('What time do you usually go to bed?', validators=[DataRequired()])
+    waking = TimeField('What time do you usually wake up?', validators=[DataRequired()])
     room_utility = SelectField('Do you see the room as more of a social or study place?',
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
@@ -47,10 +46,8 @@ class UpdateUserForm(FlaskForm):
                         choices=[('2020','2020'), ('2021','2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024')], validators=[DataRequired()])
     smoking = SelectField('Do you smoke?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
-    sleeping = SelectField('What time do you usually go to bed?',
-                        choices=[('22:00','22:00'), ('00:00','00:00'), ('2:00', '2:00')], validators=[DataRequired()])
-    waking = SelectField('What time do you usually wake up?',
-                        choices=[('8:00','8:00'), ('10:00','10:00'), ('12:00', '12:00')], validators=[DataRequired()])
+    sleeping = TimeField('What time do you usually go to bed?')
+    waking = TimeField('What time do you usually wake up?')
     room_utility = SelectField('Do you see the room as more of a social or study place?',
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
