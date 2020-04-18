@@ -2,24 +2,39 @@
 {% block content %}
 
 <html>
-
     <head>
-        <link rel = "stylesheet" type = "text/css" href = static/styles/indexversion6.css>
+
+         <img src="static/profile_pics/icon_edited.png" style="
+                   background-color: lightyellow;
+                   width:700px;height:250px;position:relative;
+                   float:left;
+                   margin-top:200px;
+                   margin-left: -100px;
+                   ">
+                   
+                   <div style="width:200px;
+                   height:170px;
+                   position: relative;
+                   top:-200px;
+                   margin-top: -100px;
+                   margin-left: -100px; " class="welcome">
+                   
+                        <p>Welcome to Find Your Roommate. We help match you to a new roommate right here at Duke! Register an account with us and get your roommate match immediately.</p>
+                        
+                    </div>
+                   
     </head>
     
-  <div class="jumbotron" style="background-image: url(https://lh3.googleusercontent.com/D7trDnO_nMK-j7C9yVB27FnWgX7Io7xLfa9u5e81-WD96-Ks0YeO0gH0KbUKb-ym3YeSAZCx43UiwSnqvm-eMCd-vpdPRHemtG-Qt_aw-Vl7N6yJ50n39wb-Phkx9_HVlo5FzNxUGLstvxbCny9eRFDjLUoAJnOfcg1VRTbE1ZLQ3ppsS--7oVVwWWlnLRupu2VQlSKz9xLcUGAUgK6V0vBDz4EcHz6RHGhBcooFM2B1kK0cFlzyFRYgbjDxp1Gg3SLEhYYMDMKSIo6bJA9yfeL_TGjRgDj4O1XRbSiPUXaBiuwR87ljFXtaeQdbF9vv3oawmEKlMC-z3bZjQkvOLfFt1VMwQ1tagipfNWfkVE4-vYeLoUKoGzMp5sKh3n7QLlP-up5j8oH47Oo3ZlVWpGiHxUtyaIRuT5-lS_xyYg3sbhYWs-pHxglQ69rwLgsliEumKGkgHFNuS4pFKmfVG5XJEkhm762a3pdhE4ts-0gfSXDxCcoJE6d1JdH2HLGw19gZy7k-2K4SjZ0HANlSA8hbO0fnX4H-RjhpCl0QKqJBA2b_FBx6YlUEWX2rr5nsg6TpATa6YPICmst4qtn2tkjkVPGRGECnIaRE1_OwGvdD0xns6a8-pERH5DqCJu5tDEJN6xvsjvQeZAGhaq12u-Q0LpiMYIqeCjOcNhCHETY30PMigoZH7QWO9X_I=w2208-h788-no); background-size: 30%; background-repeat: no-repeat;">
-    <h1>Find Your Roommate</h1>
-    <p>Have fun finding your roommate here</p>
+
+  <div style="background-color:transparent !important;" class="jumbotron"/>
+
   </div>
 
   <div class="container">
-
     {% for post in blog_posts.items %}
     <div class="card" >
 
       <div class="card-body">
-
-
         <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
         <a href="{{ url_for('users.user_posts', netid=post.author.netid) }}">Written By: {{ post.author.netid }}</a>
         <p>Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
@@ -42,7 +57,153 @@
           {% endif %}
       {% endfor %}
     </nav>
+   
+   
+   
+   <body style="background:linear-gradient(#e6ffff, white) !important;">
+    
+    <div class="chapelicon">
+        <img src="static/profile_pics/transparent.png" style="width:20%; height:20%; position:relative; margin-left:-850px; margin-top:-100px;float:left;">
+        </div>
+    
 
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+
+        <div style= "text-align:center;margin-left:0px;margin-right:200px;" class="reviewtext">
+       <h1><strong>Recent Find Your Roommate Reviews</strong></h1>
+       <br>
+       <br>
+       <p style="position:relative; right:-100px;">"Literally the best website ever created for Duke students!" -Ben Stiller</p>
+       <br>
+       <p style="text-align:center; position:relative;right:-100px;">"I found the love of my life. I went in looking for a roommate who doesn't smoke, and I left with the best match of my Duke career...and forever." -George Lopez</p>
+       </div>
+    <br>
+    <br>
+
+        <div style="float:left;" class="heights">
+            <a href="https://www.heightslasalle.com">
+                <img class="heightsimage" border="2" title:"Heights" src="static/profile_pics/heights.jpg" width="300" height="200"></a>
+        </div>
+        
+        <div style="float:left;"class="belmont">
+            <a href="https://www.livebelmont.com">
+                <img class="imagebelmont" border="2" src="static/profile_pics/belmont.jpg" width="300"height="200"></a></p>
+            
+        
+        <div style="float:left;" class="station">
+            <a href="https://www.station9.com">
+                <img class="station9" src="static/profile_pics/station.jpg"
+                    width="300"height="200"></a></p>
+            </div>
+    
+
+    
+    <style>
+
+        .text-block {
+            position:relative;
+            left:40px;
+            top:5px;
+            color:black;
+        }
+    
+        .welcome {
+            position:relative;
+            text-align:center;
+        }
+        
+        .time{
+            width:30%;
+            height:70%;
+            background-color:lightyellow;
+            border-radius:25px;
+            border:5px solid lightgrey;
+        }
+        
+        .heightsimage{
+            opacity:1;
+            display:block;
+            width:100%
+            height:auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border:5px solid lightgrey;
+            border-radius:10px;
+        }
+        .middle{
+            transition: .5s ease;
+            opacity:0;
+            position:absolute;
+            top:50%
+            left:50%;
+            transform: translate(-50%, -50%);
+            -ms-transform:translate(-50%, -50%);
+            text-align:center;
+        }
+        
+        .heights:hover .heightsimage{
+            opacity: 0.3;
+        }
+    
+        .heights:hover .middle{
+            opacity:1;
+        }
+    
+        .imagebelmont{
+                opacity:1;
+                display:block;
+                width:100%
+                height:auto;
+                transition: .5s ease;
+                backface-visibility: hidden;
+                border:5px solid lightgrey;
+                border-radius:10px;
+            }
+    
+            .belmont:hover .imagebelmont{
+                opacity: 0.3;
+            }
+        
+            .belmont:hover .middle{
+                opacity:1;
+            }
+      
+      .station9{
+                 opacity:1;
+                  display:block;
+                  width:100%
+                  height:auto;
+                  transition: .5s ease;
+                  backface-visibility: hidden;
+                  border:5px solid lightgrey;
+                  border-radius:10px;
+              }
+      
+              .station:hover .station9{
+                  opacity: 0.3;
+              }
+          
+              .station:hover .middle{
+                  opacity:1;
+              }
+    
+      
+      
+    </style>
+    
+    
+    
+
+<br>
+
+
+</body>
 
 
 {% endblock %}
+

@@ -14,19 +14,19 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
 
-    netid = StringField('netid',validators=[DataRequired()])
-    name = StringField('name', validators=[DataRequired()])
-    gender = SelectField('gender:',
+    netid = StringField('NetId',validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    gender = SelectField('Gender:',
                         choices=[('F','F'), ('M','M'), ('O', 'O')], validators=[DataRequired()])
-    year = SelectField('graduating year:',
+    year = SelectField('Graduating Year:',
                         choices=[('2020','2020'), ('2021','2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024')], validators=[DataRequired()])
     smoking = SelectField('Do you smoke?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
-    sleeping = SelectField('What time do you go to bed?',
+    sleeping = SelectField('What time do you usually go to bed?',
                         choices=[('22:00','22:00'), ('00:00','00:00'), ('2:00', '2:00')], validators=[DataRequired()])
-    waking = SelectField('What time do you generally wake up?',
+    waking = SelectField('What time do you usually wake up?',
                         choices=[('8:00','8:00'), ('10:00','10:00'), ('12:00', '12:00')], validators=[DataRequired()])
-    room_utility = SelectField('What is your room utility?',
+    room_utility = SelectField('Do you see the room as more of a social or study place?',
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
@@ -40,18 +40,18 @@ class RegistrationForm(FlaskForm):
 
 
 class UpdateUserForm(FlaskForm):
-    name = StringField('name', validators=[DataRequired()])
-    gender = SelectField('gender:',
+    name = StringField('Name', validators=[DataRequired()])
+    gender = SelectField('Gender:',
                         choices=[('F','F'), ('M','M'), ('O', 'O')], validators=[DataRequired()])
-    year = SelectField('graduating year:',
+    year = SelectField('Graduating Year:',
                         choices=[('2020','2020'), ('2021','2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024')], validators=[DataRequired()])
     smoking = SelectField('Do you smoke?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
-    sleeping = SelectField('What time do you go to bed?',
+    sleeping = SelectField('What time do you usually go to bed?',
                         choices=[('22:00','22:00'), ('00:00','00:00'), ('2:00', '2:00')], validators=[DataRequired()])
-    waking = SelectField('What time do you generally wake up?',
+    waking = SelectField('What time do you usually wake up?',
                         choices=[('8:00','8:00'), ('10:00','10:00'), ('12:00', '12:00')], validators=[DataRequired()])
-    room_utility = SelectField('What is your room utility?',
+    room_utility = SelectField('Do you see the room as more of a social or study place?',
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])

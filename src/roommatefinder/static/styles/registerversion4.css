@@ -1,0 +1,31 @@
+body {
+        background-image: "static/profile_pics/chapeledit.jpg";
+	background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+    }
+
+.container{
+    position: relative;
+    top: 5px;
+    background: #f1f1f1;
+    max-width:500px;
+    border: 1px solid #012169;
+    box-shadow: 5px 5px #012169;
+}
+
+h1 {
+    text-shadow: 1px 1px 2px #012169;
+}
+
+.container{
+    position: relative;
+    top: 5px;
+    background: #f1f1f1;
+    max-width:500px;
+    border: 1px solid #012169;
+    box-shadow: 5px 5px #012169;
+}
+
+h1 {
+    text-shadow: 1px 1px 2px #012169;
+}
