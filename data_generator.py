@@ -75,7 +75,7 @@ def main():
 
     aggregate = users + usermajors + userlikes
 
-    f = open("load2.sql", "w+")
+    f = open("load3.sql", "w+")
     for line in aggregate:
         insert = line + "\n"
         f.write(insert)
