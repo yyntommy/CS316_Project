@@ -3,25 +3,26 @@
 
 <html>
     <head>
+        
+       <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3p; position: absolute; left: 1200px;" href="https://unsplash.com/@shaahshahidh?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Shaah Shahidh"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Shaah Shahidh</span></a>
 
          <img src="static/profile_pics/icon_edited.png" style="
-                   background-color: lightyellow;
                    width:700px;height:250px;position:relative;
                    float:left;
-                   margin-top:150px;
-                   margin-left:-150px;">
+                   margin-top:100px;
+                   margin-left:0px;">
                    
-        <div style= "background-color:papayawhip; position:absolute; margin-top: 150px;margin-left: 780px" class="title">
-            <h1>WELCOME!</h1>
+        <div style= "background-color:papayawhip; position:absolute; margin-top: 110px;margin-left: 800px;" class="title">
+            <h1 >WELCOME</h1>
             </div>
                    
-        <div style="width:500px;
-                   height:170px;
+        <div style="width:400px;
+                   height:200px;
                    position: absolute;
-                   margin-top: 250px;
-                   margin-left: 650px;" class="welcome">
+                   margin-top: 220px;
+                   margin-left: 725px;" class="welcome">
                    
-                        <h3>We help match you to a new roommate right here at Duke! Register an account with us and get your roommate match immediately.</h3>
+                        <h5>We help match you to a new roommate right here at Duke! Register an account with us and get your roommate match immediately.</h5>
                     </div>
                    
     </head>
@@ -59,40 +60,27 @@
     </nav>
    
    
-   
-   <body style="background:linear-gradient(#e6ffff, white) !important;">
+   <body>
     
-    <div class="chapelicon">
-        <img src="static/profile_pics/transparent.png" style="width:10%; height:20%; position:absolute; float:left; margin-left:-800px; margin-top:75px;">
-        </div>
-    
-
-       <br>
-       <br>
-       <br>
+    <div align="center"class="containerback">
+    </div>
        
-
-        <div style= "margin-left: 100px; margin-top: 300px; position:absolute; background-color: lightyellow; padding: 75px; border: 1px grey dotted;" class="reviewtext">
+        <div style= "margin-left: 150px; margin-top: 300px; position:absolute; background-color: lightyellow; padding: 50px; border: 1px grey dotted;" class="reviewtext">
        <h1><strong>Recent Find Your Roommate Reviews</strong></h1>
        <br>
-       <br>
        <p style="position:absolute; text-align:center; margin-left: 75px;">"Literally the best website ever created for Duke students!" -Ben Stiller</p>
-       <br>
        <br>
        <br>
        <p style="position:absolute; text-align:center; left:10px;">"I found the love of my life. I went in looking for a roommate who doesn't smoke, and I left with the best match of my Duke career...and forever." -George Lopez</p>
        </div>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
+ 
     <div style = "position:absolute; margin-top: 550px;" class="description">
         <h4>Interested in living off campus? Check out these popular apartments near Duke!</h4>
         </div>
 
-        <div style="float:left; margin-left: 100px; margin-top: 600px;" class="heights">
+        <div style="float:left; margin-left: 650px; margin-top: 460px;" class="heights">
             <a href="https://www.heightslasalle.com">
                 <img class="heightsimage" border="2" title:"Heights" src="static/profile_pics/heights.jpg" width="300" height="200"></a>
         </div>
@@ -124,13 +112,6 @@
             text-align:center;
         }
         
-        .time{
-            width:30%;
-            height:70%;
-            background-color:lightyellow;
-            border-radius:25px;
-            border:5px solid lightgrey;
-        }
         
         .heightsimage{
             opacity:1;
@@ -199,17 +180,36 @@
                   opacity:1;
               }
     
-      
+    body {
+        
+        background-image: url(static/profile_pics/back.jpg);
+        background-size: 100% 100%;
+    }
+    .containerback {
+      position: absolute;
+      margin-right:10px;
+      margin-left:-60px;
+      margin-top: -100px;
+      width: 1200px;
+      height: 1000px;
+      background-color: white;
+      z-index: -5;
+      opacity: 0.8;
+      border: 1px grey solid;
+    }
+
       
     </style>
     
-    
+
     
 
 <br>
 
 
 </body>
+
+
 
 
 {% endblock %}

@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+<body>
+    <div class = "containerback">
+        </div>
+    </body>
+
+
 <br>
 <br>
 <div class="jumbotron">
@@ -43,10 +49,7 @@
 </div>
 
 
-
 {% for userlike in userlikes %}
-
-
 
 <div class="card">
 
@@ -202,8 +205,22 @@
 <style>
     
     body {
-        background:linear-gradient(#e6ffff, white) !important;
+        background-image: url(static/profile_pics/back.jpg);
+        background-size: 100% 100%;
     }
+
+.containerback {
+  position: absolute;
+  margin-right:10px;
+  margin-left:-50px;
+  margin-top: 40px;
+  width: 1200px;
+  height: 1750px;
+  background-color: white;
+  z-index: -5;
+  opacity: 0.8;
+  border: 1px grey solid;
+}
     </style>
 
 </div>
