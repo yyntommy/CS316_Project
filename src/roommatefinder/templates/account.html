@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="titleforcredit" style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;font-size:7px; position:absolute; right:150px; top:20px">
+     <p>background by:</p>
+ </div>
+ 
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3p; position: absolute; left: 1200px;" href="https://unsplash.com/@shaahshahidh?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Shaah Shahidh"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Shaah Shahidh</span></a>
+
 <body>
     <div class = "containerback">
         </div>
@@ -10,19 +16,19 @@
 <br>
 <br>
 <div class="jumbotron">
-  <div align='center'>
+  <div style= "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" align='center'>
     <h1 >Welcome {{current_user.name}}!</h1>
     <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
     <p>{{ current_user.netid }}</p>
   </div>
 </div>
 
-<div align= "center" style = "text-decoration:underline" class="sethousing">
+<div align= "center" style = "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; text-decoration:underline" class="sethousing">
     <h5>ADD HOUSING PREFERENCE:</h5>
     </div>
 <br>
 
-<div style ="background-color: white; border: 1px solid grey; padding: 10px 10px;" class="row">
+<div style ="background-color: white; border: 1px solid grey; padding: 10px 10px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="row">
   <div class="form-group col-xs-6">
       <label for="all_classes">Building:</label>
     <select class="form-control" id="all_classes">
@@ -62,14 +68,14 @@
 {% endfor %}
 <br>
 
-<div style="text-decoration: underline" align= "center" class="schoolprefernce">
+<div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; text-decoration: underline" align= "center" class="schoolprefernce">
     <h5>ADD YOUR MAJOR:</h5>
 </div>
 <br>
 
 <div style= "background-color: white; border: 1px solid grey; padding: 10px 10px;" class="row">
     
-  <div class="form-group col-xs-6">
+  <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group col-xs-6">
       <label for="all_classes">College:</label>
     <select class="form-control" id="all_classes_major">
       {% for o in all_classes_major %}
@@ -77,7 +83,7 @@
       {% endfor %}
     </select>
   </div>
-  <div style="margin-left:50px;" class="form-group col-xs-6">
+  <div style="margin-left:50px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group col-xs-6">
       <label for="all_entries">Major:</label>
     <select class="form-control" id="all_entries_major">
       {% for o in all_entries_major %}
@@ -87,7 +93,7 @@
   </div>
   
   <div>
-    <button style = "background-color: lightgrey; border:none; color: #003087; padding: 5px 5px; border: 1px solid #003087; text-align: center; cursor:pointer; margin-top: 25px;"type="button" id="process_input_major">Add your major</button>
+    <button style = "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; background-color: lightgrey; border:none; color: #003087; padding: 5px 5px; border: 1px solid #003087; text-align: center; cursor:pointer; margin-top: 25px;"type="button" id="process_input_major">Add your major</button>
   </div>
 </div>
 
@@ -158,46 +164,46 @@
 </script>
 
 
-<div class="container">
+<div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="container">
   <form  method="POST" action="" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.name.label(class="form-group") }}
       {{form.name(class='form-control')  }}
     </div
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.gender.label(class="form-group") }}
       {{form.gender(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.year.label(class="form-group") }}
       {{form.year(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.smoking.label(class="form-group") }}
       {{form.smoking(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.sleeping.label(class="form-group") }}
       {{form.sleeping(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.waking.label(class="form-group") }}
       {{form.waking(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.room_utility.label(class="form-group") }}
       {{form.room_utility(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.room_utility.label(class="form-group") }}
       {{form.room_utility(class='form-control')  }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.on_campus.label(class="form-group") }}
       {{ form.on_campus(class="form-control-file") }}
     </div>
-    <div class="form-group">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
         {{ form.submit(class="btn btn-primary") }}
     </div>
   </form>
