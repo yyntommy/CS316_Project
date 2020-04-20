@@ -1,0 +1,70 @@
+SELECT *
+FROM Users as u
+WHERE EXISTS (SELECT * From Users
+				WHERE name = 'Sheila Williams'
+				AND sleeping <= u.sleeping + interval '1 hour'
+				AND sleeping >= u.sleeping - interval '1 hour')
+AND name <> 'Sheila Williams';
+ netid  |      name      | gender | year | smoking | sleeping |  waking  | room_utility | on_campus 
+--------+----------------+--------+------+---------+----------+----------+--------------+-----------
+ jnw424 | Gina Groner    | F      | 2022 | N       | 01:00:00 | 06:30:00 | Social       | Y
+ od994  | Sharon Mcclain | F      | 2022 | N       | 01:00:00 | 10:00:00 | Study        | N
+ wu82   | James Taylor   | M      | 2022 | N       | 01:00:00 | 04:00:00 | Social       | Y
+ ip64   | Robert Teague  | O      | 2023 | N       | 01:00:00 | 10:30:00 | Study        | Y
+(4 rows)
+
+SELECT *
+FROM Users as u
+WHERE EXISTS (SELECT * From Users
+				WHERE name = 'Sheila Williams'
+				AND waking <= u.waking + interval '1 hour'
+				AND waking >= u.waking - interval '1 hour')
+AND name <> 'Sheila Williams';
+ netid |       name       | gender | year | smoking | sleeping |  waking  | room_utility | on_campus 
+-------+------------------+--------+------+---------+----------+----------+--------------+-----------
+ ut321 | Aaron Montogmery | M      | 2023 | Y       | 00:00:00 | 08:00:00 | Study        | Y
+ iw34  | Hilda Schrier    | O      | 2024 | N       | 21:00:00 | 09:30:00 | Social       | Y
+ gq96  | Lindsay Rinehart | O      | 2024 | Y       | 22:00:00 | 09:00:00 | Study        | N
+(3 rows)
+
+SELECT *
+FROM Users as u
+WHERE EXISTS (SELECT * From Users
+				WHERE name = 'Sheila Williams'
+				AND smoking = u.smoking)
+AND name <> 'Sheila Williams';
+ netid  |      name       | gender | year | smoking | sleeping |  waking  | room_utility | on_campus 
+--------+-----------------+--------+------+---------+----------+----------+--------------+-----------
+ abc123 | Mary Marquez    | F      | 2021 | N       | 00:00:00 | 06:00:00 | Study        | Y
+ aq000  | Jacqueline Lin  | F      | 2021 | N       | 04:00:00 | 10:00:00 | Social       | Y
+ jnw424 | Gina Groner     | F      | 2022 | N       | 01:00:00 | 06:30:00 | Social       | Y
+ od994  | Sharon Mcclain  | F      | 2022 | N       | 01:00:00 | 10:00:00 | Study        | N
+ aj39   | Mary Brown      | F      | 2022 | N       | 22:00:00 | 05:00:00 | Study        | Y
+ wu82   | James Taylor    | M      | 2022 | N       | 01:00:00 | 04:00:00 | Social       | Y
+ he80   | Earl Laporta    | M      | 2023 | N       | 23:30:00 | 12:00:00 | Social       | N
+ eo80   | Kenneth Kincade | M      | 2023 | N       | 23:30:00 | 13:00:00 | Study        | Y
+ ip64   | Robert Teague   | O      | 2023 | N       | 01:00:00 | 10:30:00 | Study        | Y
+ iw34   | Hilda Schrier   | O      | 2024 | N       | 21:00:00 | 09:30:00 | Social       | Y
+ nj30   | Mike Eastman    | O      | 2024 | N       | 23:00:00 | 10:00:00 | Social       | Y
+ fh58   | Lydia Stewart   | O      | 2024 | N       | 23:00:00 | 11:30:00 | Study        | Y
+(12 rows)
+
+SELECT *
+FROM Users as u
+WHERE EXISTS (SELECT * From Users
+				WHERE name = 'Sheila Williams'
+				AND room_utility = u.room_utility)
+AND name <> 'Sheila Williams';
+ netid  |       name       | gender | year | smoking | sleeping |  waking  | room_utility | on_campus 
+--------+------------------+--------+------+---------+----------+----------+--------------+-----------
+ abc123 | Mary Marquez     | F      | 2021 | N       | 00:00:00 | 06:00:00 | Study        | Y
+ zy206  | Anne Palmer      | F      | 2021 | Y       | 00:30:00 | 06:00:00 | Study        | Y
+ od994  | Sharon Mcclain   | F      | 2022 | N       | 01:00:00 | 10:00:00 | Study        | N
+ aj39   | Mary Brown       | F      | 2022 | N       | 22:00:00 | 05:00:00 | Study        | Y
+ ut321  | Aaron Montogmery | M      | 2023 | Y       | 00:00:00 | 08:00:00 | Study        | Y
+ eo80   | Kenneth Kincade  | M      | 2023 | N       | 23:30:00 | 13:00:00 | Study        | Y
+ ip64   | Robert Teague    | O      | 2023 | N       | 01:00:00 | 10:30:00 | Study        | Y
+ gq96   | Lindsay Rinehart | O      | 2024 | Y       | 22:00:00 | 09:00:00 | Study        | N
+ fh58   | Lydia Stewart    | O      | 2024 | N       | 23:00:00 | 11:30:00 | Study        | Y
+(9 rows)
+

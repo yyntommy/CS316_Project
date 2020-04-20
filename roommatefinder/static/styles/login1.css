@@ -1,0 +1,23 @@
+body {
+	background-color: background-color: #b3c3e6;
+    background-image: url('/static/profile_pics/chapeledit.jpg');
+}
+
+submit {
+	background: blue;
+}
+
+.container {
+	position:  relative;
+    	top: 100px;
+    	right: 500px;
+    	background: #f1f1f1;
+    	max-width: 400px;
+    	max-height: 500px;
+    	border: 1px solid #012169;
+    	box-shadow: 5px 5px #012169;
+}
+
+h1{
+    text-shadow: 1px 1px 2px #012169;
+}
