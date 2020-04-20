@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<br>
+<br>
 <div class="jumbotron">
   <div align='center'>
     <h1 >Welcome {{current_user.name}}!</h1>
@@ -9,32 +11,44 @@
   </div>
 </div>
 
-<div class="row">
+<div align= "center" style = "text-decoration:underline" class="sethousing">
+    <h5>ADD HOUSING PREFERENCE:</h5>
+    </div>
+<br>
+
+<div style ="background-color: white; border: 1px solid grey; padding: 10px 10px;" class="row">
   <div class="form-group col-xs-6">
-    <label for="all_classes">Select a building</label>
+      <label for="all_classes">Building:</label>
     <select class="form-control" id="all_classes">
       {% for o in all_classes %}
               <option value="{{ o }}">{{ o }}</option>
       {% endfor %}
     </select>
   </div>
-  <div class="form-group col-xs-6">
-    <label for="all_entries">Select a house</label>
+
+  
+  <div style="margin-left:50px;" class="form-group col-xs-6">
+      <label for="all_entries">House:</label>
     <select class="form-control" id="all_entries">
       {% for o in all_entries %}
               <option value="{{ o }}">{{ o }}</option>
       {% endfor %}
     </select>
   </div>
+  <div>
+      
+    <button style="background-color: lightgrey; border:none; color: #003087; padding: 5px 5px; border: 1px solid #003087; text-align: center; cursor:pointer; margin-left: -255px; margin-top: 95px; posiiton: absolute;" type="button" id="process_input">Add Housing Preference</button>
+  </div>
+  
 </div>
 
-<div>
-  <button type="button" id="process_input">Add housing preference</button>
-</div>
+
 
 {% for userlike in userlikes %}
 
-<div class="card" >
+
+
+<div class="card">
 
   <div class="card-body">
     <p>Building: {{ userlike.building }}</p>
@@ -43,29 +57,37 @@
 </div>
 
 {% endfor %}
+<br>
 
-<div class="row">
+<div style="text-decoration: underline" align= "center" class="schoolprefernce">
+    <h5>ADD YOUR MAJOR:</h5>
+</div>
+<br>
+
+<div style= "background-color: white; border: 1px solid grey; padding: 10px 10px;" class="row">
+    
   <div class="form-group col-xs-6">
-    <label for="all_classes">Select a school</label>
+      <label for="all_classes">College:</label>
     <select class="form-control" id="all_classes_major">
       {% for o in all_classes_major %}
               <option value="{{ o }}">{{ o }}</option>
       {% endfor %}
     </select>
   </div>
-  <div class="form-group col-xs-6">
-    <label for="all_entries">Select a major</label>
+  <div style="margin-left:50px;" class="form-group col-xs-6">
+      <label for="all_entries">Major:</label>
     <select class="form-control" id="all_entries_major">
       {% for o in all_entries_major %}
               <option value="{{ o }}">{{ o }}</option>
       {% endfor %}
     </select>
   </div>
+  
+  <div>
+    <button style = "background-color: lightgrey; border:none; color: #003087; padding: 5px 5px; border: 1px solid #003087; text-align: center; cursor:pointer; margin-top: 25px;"type="button" id="process_input_major">Add your major</button>
+  </div>
 </div>
 
-<div>
-  <button type="button" id="process_input_major">Add your major</button>
-</div>
 
 {% for usermajor in usermajors %}
 
@@ -176,6 +198,13 @@
         {{ form.submit(class="btn btn-primary") }}
     </div>
   </form>
+  
+<style>
+    
+    body {
+        background:linear-gradient(#e6ffff, white) !important;
+    }
+    </style>
 
 </div>
 
