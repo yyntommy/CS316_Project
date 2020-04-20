@@ -23,14 +23,14 @@
   </div>
 </div>
 
-<div align= "center" style = "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; text-decoration:underline" class="sethousing">
-    <h5>ADD HOUSING PREFERENCE:</h5>
-    </div>
 <br>
 
-<div style ="background-color: white; border: 1px solid grey; padding: 10px 10px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="row">
-  <div class="form-group col-xs-6">
-      <label for="all_classes">Building:</label>
+<div style ="width: 700px; background-color: white; border: 3px dotted #99ccff; padding: 10px 10px;margin-left:200px; margin-top:-40px;" class="row">
+    <div align= "left" style = "color: #003087; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif" class="sethousing">
+        <h2>Housing Preference</h2>
+    </div>
+  <div style="margin-top: 70px; margin-left: -250px;"class="form-group col-xs-6">
+      <label style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif" for="all_classes"><strong>Building:</strong></label>
     <select class="form-control" id="all_classes">
       {% for o in all_classes %}
               <option value="{{ o }}">{{ o }}</option>
@@ -39,8 +39,8 @@
   </div>
 
   
-  <div style="margin-left:50px;" class="form-group col-xs-6">
-      <label for="all_entries">House:</label>
+  <div style="margin-left:50px; margin-top:70px" class="form-group col-xs-6">
+      <label style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif"for="all_entries"><strong>House:</strong></label>
     <select class="form-control" id="all_entries">
       {% for o in all_entries %}
               <option value="{{ o }}">{{ o }}</option>
@@ -49,7 +49,7 @@
   </div>
   <div>
       
-    <button style="background-color: lightgrey; border:none; color: #003087; padding: 5px 5px; border: 1px solid #003087; text-align: center; cursor:pointer; margin-left: -255px; margin-top: 95px; posiiton: absolute;" type="button" id="process_input">Add Housing Preference</button>
+      <button style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:102px; margin-left:320px;" class ="btn btn-primary" type="button" id="process_input">Update</button>
   </div>
   
 </div>
@@ -68,23 +68,24 @@
 {% endfor %}
 <br>
 
-<div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; text-decoration: underline" align= "center" class="schoolprefernce">
-    <h5>ADD YOUR MAJOR:</h5>
-</div>
 <br>
 
-<div style= "background-color: white; border: 1px solid grey; padding: 10px 10px;" class="row">
+<div style= "width: 700px; background-color: white; border: 3px dotted #99ccff; padding: 10px 10px; margin-left:200px; margin-top:-20px;" class="row">
+    <div align= "left" style = "color: #003087; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif" class="schoolprefernce">
+        <h2>Major</h2>
+    </div>
     
-  <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group col-xs-6">
-      <label for="all_classes">College:</label>
+  <div style="margin-top: 70px;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-left:-70px" class="form-group col-xs-6">
+      
+      <label for="all_classes"><strong>College:</strong></label>
     <select class="form-control" id="all_classes_major">
       {% for o in all_classes_major %}
               <option value="{{ o }}">{{ o }}</option>
       {% endfor %}
     </select>
   </div>
-  <div style="margin-left:50px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group col-xs-6">
-      <label for="all_entries">Major:</label>
+  <div style="margin-left:20px; margin-top:70px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group col-xs-6">
+      <label for="all_entries"><strong>Major:</strong></label>
     <select class="form-control" id="all_entries_major">
       {% for o in all_entries_major %}
               <option value="{{ o }}">{{ o }}</option>
@@ -93,7 +94,7 @@
   </div>
   
   <div>
-    <button style = "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; background-color: lightgrey; border:none; color: #003087; padding: 5px 5px; border: 1px solid #003087; text-align: center; cursor:pointer; margin-top: 25px;"type="button" id="process_input_major">Add your major</button>
+    <button style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:102px; margin-left:20px;" class="btn btn-primary" type="button" id="process_input_major">Update</button>
   </div>
 </div>
 
@@ -164,45 +165,64 @@
 </script>
 
 
-<div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="container">
+
+
+<div style="background-color: white; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; border: 3px dotted #99ccff; padding: 10px 10px; width:700px" class="container">
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; color: #003087" class="basic">
+    <h2>Basic Information</h2>
+    </div>
+    <br>
   <form  method="POST" action="" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="font-weight:bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.name.label(class="form-group") }}
-      {{form.name(class='form-control')  }}
-    </div
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    </div>
+    <div style="width:40%; margin-top:-30px">
+      {{form.name(class='form-control') }}
+    </div>
+    <div style="font-weight:bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-left: 400px; margin-top:-70px;" class="form-group">
       {{ form.gender.label(class="form-group") }}
+    </div>
+    <div style="width:20%; margin-left:400px; margin-top:-25px;">
       {{form.gender(class='form-control')  }}
     </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="font-weight:bold; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:10px;" class="form-group">
       {{ form.year.label(class="form-group") }}
+    </div>
+    <div style="width:20%; margin-top:-30px;">
       {{form.year(class='form-control')  }}
     </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="margin-left:400px; margin-top: -65px; font-weight:bold; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.smoking.label(class="form-group") }}
+      </div>
+    <div style="width:20%; margin-left:400px; margin-top:-30px;">
       {{form.smoking(class='form-control')  }}
     </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="font-weight:bold; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:20px" class="form-group">
       {{ form.sleeping.label(class="form-group") }}
+    </div>
+    <div style="width:20%; margin-top:-30px;">
       {{form.sleeping(class='form-control')  }}
     </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="margin-top:20px; font-weight: bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.waking.label(class="form-group") }}
+    </div>
+    <div style="width:20%; margin-top:-30px;">
       {{form.waking(class='form-control')  }}
     </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="margin-top:20px; font-weight:bold; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.room_utility.label(class="form-group") }}
+    </div>
+    <div style="font-weight:bold; width:20%; margin-top:-30px;">
       {{form.room_utility(class='form-control')  }}
     </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
-      {{ form.room_utility.label(class="form-group") }}
-      {{form.room_utility(class='form-control')  }}
-    </div>
-    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+    <div style="margin-top:20px; font-weight:bold; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.on_campus.label(class="form-group") }}
+    </div>
+    <div style="margin-top:-30px; width:20%">
       {{ form.on_campus(class="form-control-file") }}
     </div>
+    <br>
     <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
         {{ form.submit(class="btn btn-primary") }}
     </div>
