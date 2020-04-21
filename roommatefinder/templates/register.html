@@ -4,9 +4,11 @@
 <html>
     
 <head>
-    <link rel = "stylesheet" type = "text/css" href= static/styles/registerversion4.css>
 </head>
-<body style="background:linear-gradient(#e6ffff, white) !important;">
+<body style="background-image: url(static/profile_pics/back.jpg); background-size: 100% 100%; background-repeat:no-repeat;">
+    
+    <div class="containerback" style= "background-color: white; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; border: 3px dotted #99ccff; padding: 10px 10px; width:700px; margin-right:-100px; margin-top:50px;">
+    
   <form style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" method="POST">
     <h1>Registration</h1>
     <br>
@@ -100,6 +102,7 @@
     
     {{form.submit()}}
   </form>
+  </div>
   <br>
 </body>
 <br>
@@ -107,3 +110,4 @@
 
 </html>
 {% endblock %}
+
