@@ -2,20 +2,24 @@
 {% block content %}
 <html>
     <head>
-        <link rel = "stylesheet" type = "text/css" href = static/styles/login1.css>
+        <link rel = "stylesheet" type = "text/css" href = static/styles/login3.css>
     </head>
 <body>
-  <form style= "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" method="POST">
-    <h1>Student Login</h1>
-    {{form.hidden_tag()}}
-    <p>
-    <span>{{form.netid.label}}</span>&nbsp&nbsp{{form.netid(size=32)}}<br>
-    <br>
-    <span>{{form.password.label}}</span>&nbsp&nbsp{{form.password(size=29)}}<br>
-    <br>
-    {{form.submit()}}
-    </p>
-  </form>
+	<div class="login-page">
+		<div class="form">
+		  <form style= "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" method="POST">
+			<h1>Student Login</h1>
+			{{form.hidden_tag()}}
+			<p>
+			<span>{{form.netid.label}}</span>&nbsp&nbsp{{form.netid(size=32)}}<br>
+			<br>
+			<span>{{form.password.label}}</span>&nbsp&nbsp{{form.password(size=29)}}<br>
+			<br>
+			{{form.submit()}}
+			</p>
+		  </form>
+		</div>
+	</div>
 </body>
 </html>
 {% endblock %}
