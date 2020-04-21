@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-  <div class="jumbotron">
-    <div align='center'>
-      <h1>Welcome to the page for {{user.netid}}</h1>
+<div style="margin-top:50px; background-color: white; border: 3px dotted lightblue; opacity:0.8;"class="container">
+  <div style="background-color:transparent !important;"class="jumbotron">
+    <div style="font-weight:bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;"align='center'>
+      <h1>Welcome to the profile page for {{user.name}}!</h1>
       <img src="{{url_for('static',filename='profile_pics/'+user.profile_image)}}" >
+          <br>
+          <br>
+          <h2 style="color:#003087"align="left"><strong>Basic Information:</strong></h2>
+    </div>
+    <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;">
       <h3>Name: {{user.name}}</h3>
       <h3>Gender: {{user.gender}}</h3>
       <h3>Year: {{user.year}}</h3>
@@ -14,9 +19,11 @@
       <h3>Room Utility: {{user.room_utility}}</h3>
       <h3>On Campus? {{user.on_campus}}</h3>
     </div>
+    
   </div>
 
-
+  <h3>Your Blog Posts:</h3>
+  <br>
 {% for post in blog_posts.items  %}
   <h2> <a href="{{url_for('blog_posts.blog_post',blog_post_id=post.id)}}">{{post.title}}</a> </h2>
   Written By: <a href="{{url_for('users.user_posts',netid=post.author.netid)}}">{{post.author.netid}}</a>

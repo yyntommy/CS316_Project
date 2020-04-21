@@ -4,39 +4,40 @@
 <html>
     <head>
         
-        <div class="titleforcredit" style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;font-size:7px; position:absolute; right:150px; top:20px">
-            <p>background by:</p>
-        </div>
-        
-       <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3p; position: absolute; left: 1200px;" href="https://unsplash.com/@shaahshahidh?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Shaah Shahidh"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Shaah Shahidh</span></a>
+ </head>
 
-         <img src="static/profile_pics/icon_edited.png" style="
-                   width:700px;height:250px;position:relative;
-                   float:left;
-                   margin-top:100px;
-                   margin-left:0px;">
-                   
-        <div style= "background-color:papayawhip; position:absolute; margin-top: 110px;margin-left: 800px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; " class="title">
-            <h1><strong>Welcome</strong></h1>
-            </div>
-
+   
+        <img src="static/profile_pics/icon_edited.png" style="
+        width:700px;height:250px;position:relative;
+        float:left;
+        margin-top:100px;
+        margin-left:0px; background-color:white;">
+        <br>
+        <br>
+        <br>
+        <a style="font-size:7px; margin-left:-700px;margin-bottom:1000px !important;"href="https://www.vecteezy.com/free-vector/friend">Friend Vectors by Vecteezy</a>
+    
         <div style="width:400px;
-                   height:200px;
+                   height:250px;
                    position: absolute;
-                   margin-top: 220px;
-                   margin-left: 725px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="welcome">
+                   margin-top: 4px;
+                   margin-left: 700px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; background-color:white;" center= "align" class="welcome">
+                   <br>
+                    <h1><strong>Welcome</strong></h1>
+                    <br>
+                    <br>
                         <h5>We help match you to a new roommate right here at Duke! Register an account with us and get your roommate match immediately.</h5>
                     </div>
-    </head>
+    </div>
     
 
-  <div style="background-color:transparent !important;" class="jumbotron"/>
+  <div style="background-color: transparent !important" class="jumbotron"/>
   </div>
 
-  <div class="container">
-    {% for post in blog_posts.items %}
+    <div style="margin-top:180px;" class="container">
+        <h1 style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;">Recently Posted Blog Posts</h1>
+      {% for post in blog_posts.items %}
     <div class="card" >
-
       <div class="card-body">
         <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
         <a href="{{ url_for('users.user_posts', netid=post.author.netid) }}">Written By: {{ post.author.netid }}</a>
@@ -64,80 +65,9 @@
    
    <body>
     
-    <div align="center"class="containerback">
-    </div>
-    
-    
-    <div class="slideshowcontainer" style="margin-top:250px; margin-left:300px;position:absolute;" align="center">
-        <h4>Check out the Different Dorm Quads:</h4>
-    </div>
-    <div class="slideshow" style="position:absolute; margin-top:300px; margin-left: 300px;">
-        <img class="dormpictures" src="static/profile_pics/edens.jpg" style="width:400px; height:300px">
-      
-        <img class="dormpictures" src="static/profile_pics/craven.png" style="width:400px; height:300px">
-            
-        <img class="dormpictures" src="static/profile_pics/crowell.jpg" style="width:400px; height:300px">
-            
-        <img class="dormpictures" src="static/profile_pics/few1.jpg" style="width:400px; height:300px">
-            
-        <img class="dormpictures" src="static/profile_pics/kilgo.jpg" style="width:400px; height:300px">
-            
-        <img class="dormpictures" src="static/profile_pics/keohane.jpg" style="width:400px; height:300px">
-                <button class="leftbutton" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="rightbutton" onclick="plusDivs(1)">&#10095;</button>
-        </div>
 <br>
 <br>
 <br>
-    
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-        
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-    
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("dormpictures");
-        if (n > x.length ){
-            slideIndex = 1
-        }
-        if(n < 1){
-            slideIndex = x.length
-        }
-        for(i = 0; i < x.length; i++){
-            x[i].style.display = "none";
-        }
-        x[slideIndex-1].style.display = "block";
-    }
-    </script>
-        
-        
-    
-    <br>
-    <br>
- 
-    <div style = "position:absolute; margin-top: 550px; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; " class="description">
-        <h4>Interested in living off campus? Check out these popular apartments near Duke!</h4>
-        </div>
-
-        <div style="float:left; margin-left: 650px; margin-top: 530px;" class="heights">
-            <a href="https://www.heightslasalle.com">
-                <img class="heightsimage" border="2" title:"Heights" src="static/profile_pics/heights.jpg" width="300" height="200"></a>
-        </div>
-        
-        <div style="float:left;position:absolute; margin-top:600px;"class="belmont">
-            <a href="https://www.livebelmont.com">
-                <img class="imagebelmont" border="2" src="static/profile_pics/belmont.jpg" width="300"height="200"></a></p>
-            
-        
-        <div style="margin-left: 320px; position:absolute; margin-top:-215px;" class="station">
-            <a href="https://www.station9.com">
-                <img class="station9" src="static/profile_pics/station.jpg"
-                    width="300"height="200"></a></p>
-            </div>
     
 
     
@@ -225,9 +155,8 @@
               }
     
     body {
-        
-        background-image: url(static/profile_pics/back.jpg);
-        background-size: 100% 100%;
+        background: rgb(206,231,255);
+        background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);
     }
     .containerback {
       position: absolute;

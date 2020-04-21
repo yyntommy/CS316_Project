@@ -10,12 +10,12 @@ from roommatefinder.models import User
 
 class FilterForm(FlaskForm):
 
-    year_from = SelectField('graduation year from:',
+    year_from = SelectField('Graduation Year From:',
                         choices=[('2020','2020'), ('2021','2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024')], validators=[DataRequired()])
-    year_to = SelectField('graduation year to:',
+    year_to = SelectField('To:',
                         choices=[('2020','2020'), ('2021','2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024')], validators=[DataRequired()])
-    sleeping_from = TimeField('Sleeping time from')
-    sleeping_to = TimeField('Sleeping time to')
-    waking_from = TimeField('Waking time from')
-    waking_to = TimeField('Waking time to')
-    submit = SubmitField('Filter!')
+    sleeping_from = TimeField('Sleep Time From:')
+    sleeping_to = TimeField('To:')
+    waking_from = TimeField('Wake Up Time From:')
+    waking_to = TimeField('To:')
+    submit = SubmitField('Filter')

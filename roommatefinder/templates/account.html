@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="titleforcredit" style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;font-size:7px; position:absolute; right:150px; top:20px">
-     <p>background by:</p>
- </div>
  
-<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3p; position: absolute; left: 1200px;" href="https://unsplash.com/@shaahshahidh?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Shaah Shahidh"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Shaah Shahidh</span></a>
 
 <body>
     <div class = "containerback">
@@ -15,9 +10,10 @@
 
 <br>
 <br>
-<div class="jumbotron">
+<div style="background-color:transparent;"class="jumbotron">
   <div style= "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" align='center'>
     <h1 >Welcome {{current_user.name}}!</h1>
+    <br>
     <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
     <p>{{ current_user.netid }}</p>
   </div>
@@ -25,7 +21,7 @@
 
 <br>
 
-<div style ="width: 700px; background-color: white; border: 3px dotted #99ccff; padding: 10px 10px;margin-left:200px; margin-top:-40px;" class="row">
+<div style ="width: 700px; background-color: white; border: 3px dotted #99ccff; padding: 10px 10px;margin-left:200px; margin-top:-60px;" class="row">
     <div align= "left" style = "color: #003087; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif" class="sethousing">
         <h2>Housing Preference</h2>
     </div>
@@ -231,21 +227,22 @@
 <style>
     
     body {
-        background-image: url(static/profile_pics/back.jpg);
-        background-size: 100% 100%;
+        background: rgb(206,231,255);
+        background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);
+        
     }
 
 .containerback {
   position: absolute;
   margin-right:10px;
-  margin-left:-50px;
+  margin-left:50px;
   margin-top: 40px;
-  width: 1200px;
-  height: 1750px;
+  width: 1000px;
+  height: 1550px;
   background-color: white;
   z-index: -5;
   opacity: 0.8;
-  border: 1px grey solid;
+  border: 3px lightblue dotted;
 }
     </style>
 

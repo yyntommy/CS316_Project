@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron">
+<div style="background-color:white; opacity:0.8; margin-top:50px; background-size:50% 50%; border: 3px lightblue dotted;"class="jumbotron">
   <h1>{{post.title}}</h1>
   <h2>Written by: {{post.author.netid}}</h2>
   <h3>Published: {{post.date.strftime('%B %d, %Y')}}</h3>
@@ -40,5 +40,12 @@
   </div>
 </div>
 
+
+<style>
+    body {
+        background: rgb(206,231,255);
+        background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);
+    }
+    </style>
 
 {% endblock %}
