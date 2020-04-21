@@ -9,8 +9,8 @@
     
     <div class="containerback" style= "background-color: white; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; border: 3px dotted #99ccff; padding: 10px 10px; width:700px; margin-right:-100px; margin-top:50px;">
     
-  <form style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" method="POST">
-    <h1>Registration</h1>
+  <form style="font-weight:bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" method="POST">
+    <h1 style="font-weight:bold;color:#003087">Registration</h1>
     <br>
     {{form.hidden_tag()}}
     {{form.netid.label}}
@@ -99,8 +99,9 @@
     {% endfor %}<br>
     
     <br>
-    
+<div>
     {{form.submit()}}
+</div>
   </form>
   </div>
   <br>
