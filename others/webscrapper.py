@@ -8,7 +8,7 @@ import pandas as pd
 URLS = []
 starting = "https://www.roomies.com/profiles/"
 c = 500000
-counter = 50
+counter = 50 #number of pages you want to extract
 text_data = []
 
 while (counter != 0):
