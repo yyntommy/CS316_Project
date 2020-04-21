@@ -40,16 +40,7 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.container {
-  position: relative;
-  z-index: 1;
-  background: #f1f1f1;
-  max-width: 400px;
-  max-height: 500px;
-  border: 1px solid #012169;
-  box-shadow: 5px 5px #012169;
-  margin: 0 auto;
-}
+
 .container .info {
   margin: 50px auto;
   text-align: center;
