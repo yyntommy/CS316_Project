@@ -5,69 +5,94 @@
     
 <head>
 </head>
-<body style="background-image: url(static/profile_pics/back.jpg); background-size: 100% 100%; background-repeat:no-repeat;">
-    
-    <div class="containerback" style= "background-color: white; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; border: 3px dotted #99ccff; padding: 10px 10px; width:700px; margin-right:-100px; margin-top:50px;">
+<body>
+    <div class="containerback" style= "background-color: white; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; border: 3px dotted lightblue; padding: 10px 10px; width:500px; margin-left:300px; margin-top:50px;">
     
   <form style="font-weight:bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" method="POST">
-    <h1 style="font-weight:bold;color:#003087">Registration</h1>
+    <h1 style="color: #003087">Registration</h1>
     <br>
     {{form.hidden_tag()}}
+    <div>
     {{form.netid.label}}
-    <br>
+    </div>
+    
+    <div>
     {{form.netid()}}
-    <br>
+    </div>
+    
     {% for error in form.netid.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
-    {{form.password.label}}
-    <br>
-    {{form.password()}}
-    <br>
-    {% for error in form.password.errors %}
-           <span style="color: red;">[{‌{ error }}]</span>
-    {% endfor %}<br>
-    {{form.pass_confirm.label}}
-    <br>
-    {{form.pass_confirm}}
-    <br>
     
-    {% for error in form.pass_confirm.errors %}
-           <span style="color: red;">[{‌{ error }}]</span>
-    {% endfor %}<br>
+    <div style="margin-top:-90px; margin-left:251px;">
     {{form.name.label}}
-    <br>
+    </div>
+    <div style="margin-top:-3px; margin-left:250px;position:absolute;">
     {{form.name}}
+    </div>
     <br>
     {% for error in form.name.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
+    
+    <div>
+    {{form.password.label}}
+    </div>
+    <div>
+    {{form.password()}}
+    </div>
+    {% for error in form.password.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    <div style="margin-top:-92px; margin-left:250px;">
+    {{form.pass_confirm.label}}
+    </div>
+    <div style="margin-left:250px;">
+    {{form.pass_confirm}}
+    </div>
+    
+    {% for error in form.pass_confirm.errors %}
+           <span style="color: red;">[{‌{ error }}]</span>
+    {% endfor %}<br>
+    
+    <div>
     {{form.gender.label}}
-    <br>
+    </div>
+    <div>
     {{form.gender}}
-    <br>
+    </div>
+    
     {% for error in form.gender.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
+    <div style="margin-top:-90px; margin-left:250px;">
     {{form.year.label}}
-    <br>
+    </div>
+    <div style="margin-left:250px;">
     {{form.year}}
-    <br>
+    </div>
+    
     {% for error in form.year.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
+    
+    <div>
     {{form.smoking.label}}
-    <br>
+    </div>
+    <div>
     {{form.smoking}}
-    <br>
+    </div>
+
     
     {% for error in form.smoking.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
     {% endfor %}<br>
+    <div>
     {{form.sleeping.label}}
-    <br>
+    </div>
+    <div>
     {{form.sleeping}}
-    <br>
+    </div>
     
     {% for error in form.sleeping.errors %}
            <span style="color: red;">[{‌{ error }}]</span>
@@ -111,4 +136,5 @@
 
 </html>
 {% endblock %}
+
 
