@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
- 
+
 
 <body>
     <div class = "containerback">
@@ -34,7 +34,7 @@
     </select>
   </div>
 
-  
+
   <div style="margin-left:50px; margin-top:70px" class="form-group col-xs-6">
       <label style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif"for="all_entries"><strong>House:</strong></label>
     <select class="form-control" id="all_entries">
@@ -44,10 +44,10 @@
     </select>
   </div>
   <div>
-      
+
       <button style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:102px; margin-left:320px;" class ="btn btn-primary" type="button" id="process_input">Update</button>
   </div>
-  
+
 </div>
 
 
@@ -70,9 +70,9 @@
     <div align= "left" style = "color: #003087; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif" class="schoolprefernce">
         <h2>Major</h2>
     </div>
-    
+
   <div style="margin-top: 70px;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-left:-70px" class="form-group col-xs-6">
-      
+
       <label for="all_classes"><strong>College:</strong></label>
     <select class="form-control" id="all_classes_major">
       {% for o in all_classes_major %}
@@ -88,7 +88,7 @@
       {% endfor %}
     </select>
   </div>
-  
+
   <div>
     <button style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:102px; margin-left:20px;" class="btn btn-primary" type="button" id="process_input_major">Update</button>
   </div>
@@ -168,8 +168,9 @@
     <h2>Basic Information</h2>
     </div>
     <br>
-  <form  method="POST" action="" enctype="multipart/form-data">
+  <form  method="POST" action="/account" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
     <div style="font-weight:bold;font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
       {{ form.name.label(class="form-group") }}
     </div>
@@ -223,13 +224,13 @@
         {{ form.submit(class="btn btn-primary") }}
     </div>
   </form>
-  
+
 <style>
-    
+
     body {
         background: rgb(206,231,255);
         background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);
-        
+
     }
 
 .containerback {

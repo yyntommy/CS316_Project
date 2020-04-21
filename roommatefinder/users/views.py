@@ -89,6 +89,7 @@ def account():
             current_user.profile_image = pic
 
         current_user.name = form.name.data
+        current_user.year = int(form.year.data)
         current_user.gender = form.gender.data
         current_user.smoking = form.smoking.data
         current_user.sleeping = form.sleeping.data
@@ -101,6 +102,7 @@ def account():
 
     elif request.method == 'GET':
         form.name.data = current_user.name
+        form.year.data = str(current_user.year)
         form.gender.data = current_user.gender
         form.smoking.data = current_user.smoking
         form.sleeping.data = current_user.sleeping

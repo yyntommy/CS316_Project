@@ -20,14 +20,9 @@ match = Blueprint('match',__name__)
 def index():
     page = request.args.get('page',1,type=int)
     users = find_matches(current_user.netid, 100)
-    filter = {'year_from': '2020',
-              'year_to': '2024',
-              'sleeping_from': '22:00',
-              'sleeping_to': '2:00',
-              'waking_from': '8:00',
-              'waking_to': '12:00'}
+    filter = {}
     form = FilterForm()
-    if form.validate_on_submit():
+    if form.is_submitted():
         filter['year_from'] = form.year_from.data
         filter['year_to'] = form.year_to.data
         filter['sleeping_from'] = form.sleeping_from.data
@@ -36,34 +31,40 @@ def index():
         filter['waking_to'] = form.waking_to.data
         users = filters(users,filter)
         return render_template('match.html',users=users, form=form)
-
-
     return render_template('match.html',users=users, form=form)
 
 
 
-def time_format(time):
+def time_format_sleep(time):
+    print(time)
     time = str(time)
-    if len(time) < 6:
-        time = time + ":00"
-    time = datetime.strptime(time, '%H:%M:%S').time()
-    flag = datetime(1,1,1,0,0,0)
-    if str(time) >= '19:00:00':
-        return (datetime.combine(datetime(1,1,1),time) - flag).total_seconds()
+    h,m,s = time.split(':')
+    h = int(h)
+    m = int(m)
+    if h >= 12:
+        h = h - 12
     else:
-        return (datetime.combine(datetime(1,1,2),time) - flag).total_seconds()
+        h = h + 12
+    return h * 60 + m
+
+def time_format_wake(time):
+    time = str(time)
+    h,m,s = time.split(':')
+    h = int(h)
+    m = int(m)
+    return h * 60 + m
+
 
 def filters(users, filter):
     tuple_matches = []
     for user in users:
         current = db.session.query(User).filter(User.netid == user[0])[0]
-        if int(filter['year_from']) > current.year or int(filter['year_to']) < current.year: continue
-        if time_format(filter['sleeping_from']) > time_format(current.sleeping) or time_format(filter['sleeping_to']) < time_format(current.sleeping):
-            print(filter['sleeping_from'])
-            continue
-        if time_format(filter['waking_from']) > time_format(current.waking) or time_format(filter['waking_to']) < time_format(current.waking): 
-            print(filter['waking_from'])
-            continue
+        if filter['year_from'] != None and int(filter['year_from']) > current.year:continue
+        if filter['year_to'] != None and int(filter['year_to']) < current.year:continue
+        if filter['sleeping_from'] != None and time_format_sleep(filter['sleeping_from']) > time_format_sleep(current.sleeping):continue
+        if filter['sleeping_to'] != None and time_format_sleep(filter['sleeping_to']) < time_format_sleep(current.sleeping):continue
+        if filter['waking_from'] != None and time_format_wake(filter['waking_from']) > time_format_wake(current.waking):continue
+        if filter['waking_to'] != None and time_format_wake(filter['waking_to']) < time_format_wake(current.waking):continue
         tuple_matches.append(user)
     return tuple_matches
 
