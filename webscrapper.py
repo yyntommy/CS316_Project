@@ -17,11 +17,15 @@ while (counter != 0):
     page = requests.get(new_starting)
     soup = BeautifulSoup(page.content, 'lxml')
     container = soup.find("div",attrs={'class': 'markdown text-gray-darkest'})
-    for p in container.find_all('p'):
-        text_data.append(p.text)
+    if container is not None:
+        for p in container.find_all('p'):
+            text_data.append(p.text)
     
     c = c + 1
     counter = counter - 1
+    print(x_str)
     
 df = pd.DataFrame(text_data)
 df.to_csv("output.csv")
+
+
