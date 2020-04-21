@@ -15,8 +15,8 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
 
-    netid = StringField('NetId',validators=[DataRequired()])
-    name = StringField('Name', validators=[DataRequired()])
+    netid = StringField('NetId:',validators=[DataRequired()])
+    name = StringField('Name:', validators=[DataRequired()])
     gender = SelectField('Gender:',
                         choices=[('F','F'), ('M','M'), ('O', 'O')], validators=[DataRequired()])
     year = SelectField('Graduating Year:',
@@ -29,8 +29,8 @@ class RegistrationForm(FlaskForm):
                         choices=[('Study','Study'), ('Social','Social')], validators=[DataRequired()])
     on_campus = SelectField('Do you want to live on campus?',
                         choices=[('Y','Y'), ('N','N')], validators=[DataRequired()])
-    password = PasswordField('Password',validators=[DataRequired(),EqualTo('pass_confirm', message='Passwords must match!')])
-    pass_confirm = PasswordField('Confirm Password',validators=[DataRequired()])
+    password = PasswordField('Password:',validators=[DataRequired(),EqualTo('pass_confirm', message='Passwords must match!')])
+    pass_confirm = PasswordField('Confirm Password:',validators=[DataRequired()])
     submit = SubmitField('Register!')
 
     def check_netid(self,field):
