@@ -17,5 +17,5 @@ class FilterForm(FlaskForm):
     sleeping_from = TimeField('Sleep Time From:')
     sleeping_to = TimeField('To:')
     waking_from = TimeField('Wake Up Time From:')
-    waking_to = TimeField('To')
+    waking_to = TimeField('To:')
     submit = SubmitField('Filter')
