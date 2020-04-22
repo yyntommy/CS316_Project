@@ -3,8 +3,7 @@
 
 
 <body>
-    <div class = "containerback" style="height:1600px">
-        </div>
+   
     </body>
 
 
@@ -53,11 +52,11 @@
 
 {% for userlike in userlikes %}
 
-<div class="card">
+<div style="margin-top:10px; margin-left:200px; width:700px;"class="card">
 
-  <div class="card-body">
-    <p>Building: {{ userlike.building }}</p>
-    <p>House: {{ userlike.housename }}</p>
+  <div style = "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; background-color:white; border: 3px dotted #99ccff; padding: 10px 10px;" class="card-body">
+    <p><strong>Building:</strong> {{ userlike.building }}</p>
+    <p><strong>House:</strong> {{ userlike.housename }}</p>
   </div>
 </div>
 
@@ -97,11 +96,11 @@
 
 {% for usermajor in usermajors %}
 
-<div class="card" >
+<div style= "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; margin-top:10px; margin-left:200px; width:700px;" class="card" >
 
-  <div class="card-body">
-    <p>School: {{ usermajor.school }}</p>
-    <p>Major: {{ usermajor.major }}</p>
+  <div style="background-color:white; border: 3px dotted #99ccff; padding: 10px 10px;"class="card-body">
+    <p><strong>School:</strong> {{ usermajor.school }}</p>
+    <p><strong>Major:</strong> {{ usermajor.major }}</p>
   </div>
 </div>
 
@@ -234,29 +233,12 @@
 <style>
 
     body {
-<<<<<<< HEAD
-        background: rgb(2,0,36);
-		background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 76%, rgba(0,59,255,1) 100%);
-
-=======
         background: rgb(206,231,255);
         background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);
 
->>>>>>> 1f5b21dddd6ab7b6309a2c75dc9fb4efd055d074
     }
 
-.containerback {
-  position: absolute;
-  margin-right:10px;
-  margin-left:50px;
-  margin-top: 40px;
-  width: 1000px;
-  height: 1550px;
-  background-color: white;
-  z-index: -5;
-  opacity: 0.8;
-  border: 3px lightblue dotted;
-}
+.
     </style>
 
 </div>
