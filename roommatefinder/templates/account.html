@@ -14,7 +14,7 @@
   <div style= "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" align='center'>
     <h1 >Welcome {{current_user.name}}!</h1>
     <br>
-    <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
+    <img align='center' src="{{ profile_image }}">
     <p>{{ current_user.netid }}</p>
   </div>
 </div>
@@ -219,6 +219,12 @@
     <div style="margin-top:-30px; width:20%">
       {{ form.on_campus(class="form-control-file") }}
     </div>
+    <div style="margin-top:20px; font-weight:bold; font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
+      {{ form.picture.label(class="form-group") }}
+    </div>
+    <div style="margin-top:-30px; width:30%">
+      {{ form.picture(class="form-control-file") }}
+    </div>
     <br>
     <div style="font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;" class="form-group">
         {{ form.submit(class="btn btn-primary") }}
@@ -231,7 +237,7 @@
 <<<<<<< HEAD
         background: rgb(2,0,36);
 		background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 76%, rgba(0,59,255,1) 100%);
-        
+
 =======
         background: rgb(206,231,255);
         background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);

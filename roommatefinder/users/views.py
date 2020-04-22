@@ -111,6 +111,7 @@ def account():
         form.on_campus.data = current_user.on_campus
 
     profile_image = url_for('static', filename='profile_pics/' + current_user.profile_image)
+    print(profile_image)
 
     userlikes = db.session.query(UserLikes).filter(UserLikes.netid.like(current_user.netid)).all()
     usermajors = db.session.query(UserMajor).filter(UserMajor.netid.like(current_user.netid)).all()

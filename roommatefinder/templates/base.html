@@ -12,7 +12,7 @@
 	li {
 		display: inline-block;
 	}
-	
+
 	li a {
 		display: block;
 		color: white;
@@ -27,12 +27,12 @@
     	background-color:#CFBDBE;
     	color: black;
 }
-    
+
 </style>
 
 <html lang="en" dir="ltr">
   <head>
-      
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -64,7 +64,7 @@
 	  <li>
         <a href="{{url_for('users.logout')}}">Log Out</a>
       </li>
-     
+
       {% else %}
       <li>
         <a href="{{url_for('users.login')}}">Log In</a>
@@ -84,7 +84,7 @@
 	  body {
         background: rgb(173,207,224);
         background: radial-gradient(circle, rgba(173,207,224,1) 0%, rgba(172,190,235,1) 35%, rgba(202,228,238,1) 100%);
-        
+
     }
 	</style>
   </body>
