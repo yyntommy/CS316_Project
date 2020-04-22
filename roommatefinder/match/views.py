@@ -6,6 +6,7 @@ from flask_login import current_user
 import numpy as np
 from datetime import datetime, timedelta
 from roommatefinder.match.forms import FilterForm
+from math import ceil
 
 
 match = Blueprint('match',__name__)
@@ -16,12 +17,35 @@ match = Blueprint('match',__name__)
 #     users = User.query.order_by(User.netid.desc()).paginate(page=page,per_page=5)
 #     return render_template('match.html',users=users, similarity=5)
 
+class PageResult:
+    def __init__(self, data, page = 1, number = 10):
+        self.__dict__ = dict(zip(['data', 'page', 'number'], [data, page, number]))
+        self.full_listing = [self.data[i:i+number] for i in range(0, len(self.data), number)]
+    def __iter__(self):
+        for i in self.full_listing[self.page-1]:
+            yield i
+    def iter_pages(self, left_edge=2, left_current=2,
+                   right_current=5, right_edge=2,pages=1):
+        last = 0
+        for num in range(1, pages + 1):
+            if num <= left_edge or \
+               (num > pages - left_current - 1 and
+                num < pages + right_current) or \
+               num > self.page - right_edge:
+                if last + 1 != num:
+                    yield None
+                yield num
+                last = num
+
+
+
 @match.route('/match', methods=['GET', 'POST'])
 def index():
     page = request.args.get('page',1,type=int)
     users = find_matches(current_user.netid, 100)
     filter = {}
     form = FilterForm()
+    pages = ceil(len(users)/10.0)
     if form.is_submitted():
         filter['year_from'] = form.year_from.data
         filter['year_to'] = form.year_to.data
@@ -31,8 +55,9 @@ def index():
         filter['waking_to'] = form.waking_to.data
         filter['room_type'] = form.room_type.data
         users = filters(users,filter)
-        return render_template('match.html',users=users, form=form)
-    return render_template('match.html',users=users, form=form)
+        pages = ceil(len(users)/10.0)
+        return render_template('match.html',users=PageResult(users, page), form=form, pages=pages)
+    return render_template('match.html',users=PageResult(users, page), form=form, pages=pages)
 
 
 
