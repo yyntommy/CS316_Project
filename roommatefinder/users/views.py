@@ -165,11 +165,18 @@ def update_dropdown():
 def process_data():
     selected_class = request.args.get('selected_class', type=str)
     selected_entry = request.args.get('selected_entry', type=str)
-    userhouse = UserLikes(netid=current_user.netid,
-                housename=selected_entry,
-                building=selected_class)
-    db.session.add(userhouse)
-    db.session.commit()
+    userhouses = db.session.query(UserLikes)\
+        .filter(UserLikes.netid == current_user.netid).all()
+    temp = db.session.query(UserLikes)\
+        .filter(UserLikes.netid == current_user.netid,
+                UserLikes.housename == selected_entry,
+                UserLikes.building == selected_class).all()
+    if len(userhouses) < 5 and len(temp) == 0:
+        userhouse = UserLikes(netid=current_user.netid,
+                    housename=selected_entry,
+                    building=selected_class)
+        db.session.add(userhouse)
+        db.session.commit()
     return jsonify(url=url_for('users.account'))
 
 def get_dropdown_values_major():
@@ -209,11 +216,14 @@ def update_dropdown_major():
 def process_data_major():
     selected_class = request.args.get('selected_class', type=str)
     selected_entry = request.args.get('selected_entry', type=str)
-    usermajor = UserMajor(netid=current_user.netid,
-                major=selected_entry,
-                school=selected_class)
-    db.session.add(usermajor)
-    db.session.commit()
+    usermajors = db.session.query(UserMajor)\
+        .filter(UserMajor.netid == current_user.netid).all()
+    if len(usermajors) == 0:
+        usermajor = UserMajor(netid=current_user.netid,
+                    major=selected_entry,
+                    school=selected_class)
+        db.session.add(usermajor)
+        db.session.commit()
     return jsonify(url=url_for('users.account'))
 
 
