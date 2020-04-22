@@ -19,11 +19,11 @@ class FilterForm(FlaskForm):
     waking_from = TimeField('Wake Up Time From:')
     waking_to = TimeField('To:')
     room_type = SelectField('Room Type:',
-    					choices=[('Study', 'Study'), ('Social','Social')])
+    					choices=[('None', 'No Preference'), ('Study', 'Study'), ('Social','Social')])
     on_campus = SelectField('On Campus: ',
-    					choices=[('Y', 'Y'), ('N', 'N')])
+    					choices=[('None', 'No Preference'), ('Y', 'Y'), ('N', 'N')])
     gender = SelectField('Gender: ',
-    					choices=[('M', 'M'), ('F', 'F')])
+    					choices=[('None', 'No Preference'), ('M', 'M'), ('F', 'F')])
     smoking = SelectField('Smoking: ',
-    					choices=[('Y', 'Y'), ('N', 'N')])
+    					choices=[('None', 'No Preference'), ('Y', 'Y'), ('N', 'N')])
     submit = SubmitField('Filter')
