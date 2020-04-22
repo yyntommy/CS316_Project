@@ -30,9 +30,6 @@ def index():
         filter['waking_from'] = form.waking_from.data
         filter['waking_to'] = form.waking_to.data
         filter['room_type'] = form.room_type.data
-        filter['on_campus'] = form.on_campus.data
-        filter['gender'] = form.gender.data
-        filter['smoking'] = form.smoking.data
         users = filters(users,filter)
         return render_template('match.html',users=users, form=form)
     return render_template('match.html',users=users, form=form)
@@ -70,9 +67,6 @@ def filters(users, filter):
         if filter['waking_from'] != None and time_format_wake(filter['waking_from']) > time_format_wake(current.waking):continue
         if filter['waking_to'] != None and time_format_wake(filter['waking_to']) < time_format_wake(current.waking):continue
         if filter['room_type'] != 'None' and filter['room_type'] != str(current.room_utility):continue
-        if filter['on_campus'] != 'None' and filter['on_campus'] != str(current.on_campus):continue
-        if filter['gender'] != 'None' and filter['gender'] != str(current.gender):continue
-        if filter['smoking'] != 'None' and filter['smoking'] != str(current.smoking):continue
         tuple_matches.append(user)
     return tuple_matches
 
