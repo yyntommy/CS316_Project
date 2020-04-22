@@ -24,19 +24,23 @@ class PageResult:
     def __iter__(self):
         for i in self.full_listing[self.page-1]:
             yield i
-    def iter_pages(self, left_edge=2, left_current=2,
-                   right_current=5, right_edge=2,pages=1):
+    def iter_pages(self, left_edge=1, left_current=1,
+                   right_current=1, right_edge=2,pages=1):
         last = 0
         for num in range(1, pages + 1):
-            if num <= left_edge or \
-               (num > pages - left_current - 1 and
-                num < pages + right_current) or \
-               num > self.page - right_edge:
+            if (
+                num <= left_edge
+                or num > pages - right_edge
+                or (
+                    num >= self.page - left_current and num <= self.page + right_current
+                )
+            ):
                 if last + 1 != num:
                     yield None
                 yield num
                 last = num
-
+        if last != pages:
+            yield None
 
 
 @match.route('/match', methods=['GET', 'POST'])
