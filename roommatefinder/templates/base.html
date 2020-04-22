@@ -7,25 +7,25 @@
 	  padding: 0;
 	  overflow: hidden;
 	  text-align: center;
-	  background-color: #f3f4e7;
-}
+	  background-color: #4773D0;
+	}
 	li {
 		display: inline-block;
 	}
 	
 	li a {
 		display: block;
-		color: black;
+		color: white;
 		text-align: center;
-		padding: 5px 16px;
+		padding: 10px 20px;
 		text-decoration: none;
 		font-family: "Gill Sans";
 		font-weight: bold;
 	}
-	
+
 	li a:hover{
-    	background-color:#012169;
-    	color: white;
+    	background-color:#CFBDBE;
+    	color: black;
 }
     
 </style>
@@ -45,16 +45,13 @@
 
       <ul>
       <li>
-        <a href="{{url_for('core.index')}}">Home</a>
+        <a class="current" href="{{url_for('core.index')}}">Home</a>
       </li>
       <li>
         <a href="{{url_for('core.info')}}">About</a>
       </li>
 
       {% if current_user.is_authenticated %}
-      <li>
-        <a href="{{url_for('users.logout')}}">Log Out</a>
-      </li>
       <li>
         <a href="{{url_for('users.account')}}">Account</a>
       </li>
@@ -63,7 +60,11 @@
       </li>
       <li>
         <a href="{{url_for('blog_posts.create_post')}}">Create Post</a>
+	  </li>
+	  <li>
+        <a href="{{url_for('users.logout')}}">Log Out</a>
       </li>
+     
       {% else %}
       <li>
         <a href="{{url_for('users.login')}}">Log In</a>
@@ -79,15 +80,12 @@
 
   {% endblock %}
 </div>
-
-<style>
-    body {
-        background: rgb(2,0,36);
-		background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 76%, rgba(0,59,255,1) 100%);
+	<style>
+	  body {
+        background: rgb(220,199,170);
+        background: linear-gradient(90deg, rgba(220,199,170,1) 0%, rgba(180,187,198,1) 100%);
         
     }
-    </style>
-
-
+	</style>
   </body>
 </html>
