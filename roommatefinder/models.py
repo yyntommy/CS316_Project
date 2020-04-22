@@ -29,7 +29,7 @@ class User(db.Model,UserMixin, Base):
     sleeping = db.Column(db.TIME, nullable=False)
     waking = db.Column(db.TIME, nullable=False)
     room_utility = db.Column(db.String(10), nullable=False)
-    on_campus = db.Column(db.String(10), nullable=False)
+    on_campus = db.Column(db.String(1), nullable=False)
     profile_image = db.Column(db.String(64),nullable=False,default='default_profile.png')
     password_hash = db.Column(db.String(128))
 
