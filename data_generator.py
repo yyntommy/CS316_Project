@@ -2,8 +2,8 @@ import string
 import random
 import names
 
-STIMES = ['20:00', '21:00', '22:00', '23:00', '00:00', '01:00', '02:00', '03:00', '20:30', '21:30', '22:30', '23:30', '00:30', '01:30', '02:30', '03:30']
-WTIMES = ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '06:30', '07:30', '08:30', '09:30', '10:30', '11:30', '12:30', '13:30']
+STIMES = ['08:00:PM', '09:00:PM', '10:00:PM', '11:00:PM', '00:00:AM', '01:00:AM', '02:00:AM', '03:00:AM', '08:30:PM', '09:30:PM', '10:30:PM', '11:30:PM', '00:30:AM', '01:30:AM', '02:30:AM', '03:30:AM']
+WTIMES = ['06:00:AM', '07:00:AM', '08:00:AM', '09:00:AM', '10:00:AM', '11:00:AM', '12:00:PM', '1:00:PM', '06:30:AM', '07:30:AM', '08:30:AM', '09:30:AM', '10:30:AM', '11:30:AM', '12:30:PM', '1:30:PM']
 TMAJORS = ['African and African American Studies', 'Air Force ROTC', 'Army ROTC', 'Art, Art History and Visual Studies', 'Arts of the Moving Image', 'Asian and Middle Eastern Studies', 'Biology', 'Chemistry', 'Classical Studies', 'Computer Science', 'Cultural Anthropology', 'Dance', 'Ecnomics', 'Education', 'English', 'Evolutionary Anthropology', 'Gender, Sexuality and Feminist Studies', 'Germanic Languages and Literature', 'Health, Wellness and Physical Education', 'History', 'International Comparative Studies', 'Linguistics', 'Literature', 'Mathematics', 'Music', 'Navy ROTC', 'Philosophy', 'Physics', 'Political Science', 'Psychology', 'Neuroscience', 'Religious Studies', 'Romance Studies', 'Slavic and Eurasian Studies', 'Sociology', 'Statistical Science', 'Theater Studies']
 PMAJORS = ['Biomedical Engineering', 'Civil Engineering', 'Environmental Engineering', 'Electrical and Computer Engineering', 'Mechanical Engineering', 'Energy Engineering']
 SCHOOLS = ['Trinity College of Arts and Sciences', 'Pratt School of Engineering']
@@ -69,13 +69,13 @@ def get_new_userlikes(users):
     return userlikes
 
 def main():
-    users, nids = get_new_users(500)
+    users, nids = get_new_users(1000)
     usermajors = get_new_usermajors(nids)
     userlikes = get_new_userlikes(nids)
 
     aggregate = users + usermajors + userlikes
 
-    f = open("load3.sql", "w+")
+    f = open("load1.sql", "w+")
     for line in aggregate:
         insert = line + "\n"
         f.write(insert)

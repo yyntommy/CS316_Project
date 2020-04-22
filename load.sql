@@ -1,22 +1,3 @@
-INSERT into Users Values('abc123','Mary Marquez','F',2021,'N','0:00','6:00 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('ntc511','Jeanette Hillard','F',2021,'Y','20:00','6:00 AM','Social','N', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('jv561','Sheila Williams','F',2021,'N','2:00','8:30 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('aq000','Jacqueline Lin','F',2021,'N','4:00','10:00 AM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('zy206','Anne Palmer','F',2021,'Y','0:30','6:00 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('jnw424','Gina Groner','F',2022,'N','1:00','6:30 AM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('od994','Sharon Mcclain','F',2022,'N','1:00','10:00 AM','Study','N', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('nz47','Donna Plungy','F',2022,'Y','5:00','12:00 PM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('aj39','Mary Brown','F',2022,'N','22:00','5:00 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('wu82','James Taylor','M',2022,'N','1:00','4:00 AM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('ut321','Aaron Montogmery','M',2023,'Y','0:00','8:00 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('he80','Earl Laporta','M',2023,'N','23:30','12:00 PM','Social','N', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('eo80','Kenneth Kincade','M',2023,'N','23:30','1:00 PM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('lu98','Robbie Lippincott','O',2023,'Y','12:30','11:00 AM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('ip64','Robert Teague','O',2023,'N','1:00','10:30 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('iw34','Hilda Schrier','O',2024,'N','21:00','9:30 AM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('gq96','Lindsay Rinehart','O',2024,'Y','22:00','9:00 AM','Study','N', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('nj30','Mike Eastman','O',2024,'N','23:00','10:00 AM','Social','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
-INSERT into Users Values('fh58','Lydia Stewart','O',2024,'N','23:00','11:30 AM','Study','Y', 'default_profile.png', 'pbkdf2:sha256:150000$9kLJiurt$03f84eb4796f9497b08e5f58e9f14822795151ee4747a487ef5ecd0bf1d05c2d');
 INSERT into House Values ('Avalon','Kilgo');
 INSERT into House Values ('Banham', 'Edens');
 INSERT into House Values ('Bastille' ,'Edens');
@@ -92,32 +73,3 @@ INSERT INTO Major VALUES ('Environmental Engineering','Pratt School of Engineeri
 INSERT INTO Major VALUES ('Electrical and Computer Engineering','Pratt School of Engineering');
 INSERT INTO Major VALUES ('Mechanical Engineering','Pratt School of Engineering');
 INSERT INTO Major VALUES ('Energy Engineering','Pratt School of Engineering');
-INSERT into UserMajor Values ('abc123','Chemistry','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('ntc511','Chemistry','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('jv561','Biology','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('aq000','Biology','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('zy206','Computer Science','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('jnw424','Computer Science','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('nz47','Computer Science','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('aj39','Mechanical Engineering','Pratt School of Engineering');
-INSERT into UserMajor Values ('wu82','Biomedical Engineering','Pratt School of Engineering');
-INSERT into UserMajor Values ('ut321','Literature','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('he80','English','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('eo80','Gender, Sexuality and Feminist Studies','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('lu98','History','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('gq96','History','Trinity College of Arts and Sciences');
-INSERT into UserMajor Values ('nj30','Electrical and Computer Engineering','Pratt School of Engineering');
-INSERT into UserMajor Values ('fh58','Computer Science','Trinity College of Arts and Sciences');
-insert into userlikes values ('abc123', 'Narnia', 'Hollows');
-insert into userlikes values ('abc123', 'Tortuga', 'Hollows');
-insert into userlikes values ('abc123', 'Pride Rock', 'Few');
-insert into userlikes values ('lu98', 'Narnia', 'Hollows');
-insert into userlikes values ('lu98', 'Tortuga', 'Hollows');
-insert into userlikes values ('gq96', 'Pride Rock', 'Few');
-insert into userlikes values ('he80', 'Narnia', 'Hollows');
-insert into userlikes values ('he80', 'Tortuga', 'Hollows');
-insert into userlikes values ('fh58', 'Pride Rock', 'Few');
-
-
-
-

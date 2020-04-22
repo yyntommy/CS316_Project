@@ -24,7 +24,7 @@ class User(db.Model,UserMixin, Base):
     netid = db.Column(db.String(64), primary_key=True, nullable=False)
     name = db.Column(db.String(64),nullable=False,index=True)
     gender = db.Column(db.String(1), nullable=False)
-    year = db.Column(db.Integer, nullable=False)
+    year = db.Column(db.SmallInteger, nullable=False)
     smoking = db.Column(db.String(1), nullable=False)
     sleeping = db.Column(db.TIME, nullable=False)
     waking = db.Column(db.TIME, nullable=False)
