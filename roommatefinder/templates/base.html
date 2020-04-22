@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 
 <style>
-    .nav-link a{
-        position:relative;
-        top:15px;
-        color:#012169;
-        background-color: lightgrey;
-        padding: 10px;
-        border-radius: 50px;
-        font-weight: bold;
-    }
-
-li a:hover{
-    background-color:#012169;
-    color: white;
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  text-align: center;
+	  background-color: #f3f4e7;
+}
+	li {
+		display: inline-block;
+	}
+	
+	li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 5px 16px;
+		text-decoration: none;
+		font-family: "Gill Sans";
+		font-weight: bold;
+	}
+	
+	li a:hover{
+    	background-color:#012169;
+    	color: white;
 }
     
 </style>
@@ -31,32 +43,32 @@ li a:hover{
   </head>
   <body>
 
-      <ul class='nav nav-pills'>
-      <li class='nav-link'>
+      <ul>
+      <li>
         <a href="{{url_for('core.index')}}">Home</a>
       </li>
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('core.info')}}">About</a>
       </li>
 
       {% if current_user.is_authenticated %}
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('users.logout')}}">Log Out</a>
       </li>
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('users.account')}}">Account</a>
       </li>
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('match.index')}}">Match</a>
       </li>
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('blog_posts.create_post')}}">Create Post</a>
       </li>
       {% else %}
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('users.login')}}">Log In</a>
       </li>
-      <li class='nav-link'>
+      <li>
         <a href="{{url_for('users.register')}}">Register</a>
       </li>
       {% endif %}
@@ -70,8 +82,8 @@ li a:hover{
 
 <style>
     body {
-        background: rgb(206,231,255);
-        background: linear-gradient(90deg, rgba(206,231,255,1) 0%, rgba(210,248,255,0.861782212885154) 35%, rgba(233,255,248,1) 100%);
+        background: rgb(2,0,36);
+		background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 76%, rgba(0,59,255,1) 100%);
         
     }
     </style>
