@@ -123,8 +123,16 @@ def account():
 def user_posts(netid):
     page = request.args.get('page',1,type=int)
     user = User.query.filter_by(netid=netid).first_or_404()
+    userhouses = UserLikes.query.filter_by(netid=netid).all()
+    houses = []
+    for i in range(1, len(userhouses)+1):
+        houses.append("Housing Preference " + str(i) + " : " + userhouses[i-1].building + ", " + userhouses[i-1].housename)
+    usermajor = UserMajor.query.filter_by(netid=netid).all()
+    majors = []
+    for i in range(1, len(usermajor)+1):
+        majors.append("Major: " + usermajor[i-1].school + ", " + usermajor[i-1].major)
     blog_posts = BlogPost.query.filter_by(author=user).order_by(BlogPost.date.desc()).paginate(page=page,per_page=5)
-    return render_template('user_blog_posts.html',blog_posts=blog_posts,user=user)
+    return render_template('user_blog_posts.html',blog_posts=blog_posts,user=user,houses=houses,majors=majors)
 
 
 
@@ -226,15 +234,25 @@ def process_data_major():
         db.session.commit()
     return jsonify(url=url_for('users.account'))
 
+# DELETE
+@users.route('/<building>/<housename>/delete_house',methods=['GET','POST'])
+def delete_house(building,housename):
+    netid = current_user.netid
+    house = db.session.query(UserLikes)\
+        .filter(UserLikes.netid == current_user.netid,
+                UserLikes.housename == housename,
+                UserLikes.building == building)[0]
+    db.session.delete(house)
+    db.session.commit()
+    flash('House Deleted')
+    return redirect(url_for('users.account'))
 
-
-
-
-
-
-
-
-
-
-
-# user's list of Blog posts
+@users.route('/delete_major',methods=['GET','POST'])
+def delete_major():
+    netid = current_user.netid
+    major = db.session.query(UserMajor)\
+        .filter(UserMajor.netid == current_user.netid)[0]
+    db.session.delete(major)
+    db.session.commit()
+    flash('Major Deleted')
+    return redirect(url_for('users.account'))

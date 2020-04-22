@@ -18,8 +18,14 @@
       <h3>Waking Time: {{user.waking}}</h3>
       <h3>Room Utility: {{user.room_utility}}</h3>
       <h3>On Campus? {{user.on_campus}}</h3>
+      {% for house in houses  %}
+        <h3>{{ house }}</h3>
+      {% endfor %}
+      {% for major in majors  %}
+        <h3>{{ major }}</h3>
+      {% endfor %}
     </div>
-    
+
   </div>
 
   <h3>Your Blog Posts:</h3>

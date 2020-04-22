@@ -3,7 +3,7 @@
 
 
 <body>
-   
+
     </body>
 
 
@@ -57,6 +57,9 @@
   <div style = "font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; background-color:white; border: 3px dotted #99ccff; padding: 10px 10px;" class="card-body">
     <p><strong>Building:</strong> {{ userlike.building }}</p>
     <p><strong>House:</strong> {{ userlike.housename }}</p>
+    <form action="{{url_for('users.delete_house',building=userlike.building,housename=userlike.housename)}}" method="post">
+      <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
   </div>
 </div>
 
@@ -101,6 +104,9 @@
   <div style="background-color:white; border: 3px dotted #99ccff; padding: 10px 10px;"class="card-body">
     <p><strong>School:</strong> {{ usermajor.school }}</p>
     <p><strong>Major:</strong> {{ usermajor.major }}</p>
+    <form action="{{url_for('users.delete_major')}}" method="post">
+      <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
   </div>
 </div>
 
