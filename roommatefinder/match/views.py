@@ -56,6 +56,26 @@ def time_format_wake(time):
     return h * 60 + m
 
 
+def min_time(utime, ptime):
+    pd = datetime(1,1,1)
+    nd = datetime(1,1,2)
+
+    timeu1 = datetime.combine(nd, utime)
+    timep1 = datetime.combine(nd, ptime)
+    diff_hrs1 = (timeu1 - timep1).total_seconds() / 3600
+
+    timeu2 = datetime.combine(nd, utime)
+    timep2 = datetime.combine(pd, ptime)
+    diff_hrs2 = (timeu2 - timep2).total_seconds() / 3600
+
+    timeu3 = datetime.combine(pd, utime)
+    timep3 = datetime.combine(nd, ptime)
+    diff_hrs3 = (timeu3 - timep3).total_seconds() / 3600
+
+    return min(abs(diff_hrs1), abs(diff_hrs2), abs(diff_hrs3))
+
+
+
 def filters(users, filter):
     tuple_matches = []
     for user in users:
@@ -125,16 +145,12 @@ def find_matches(netid, num):
         # Calculate year score partition 15%
         unum = int(user[0][0].year)
         pnum = int(potential[0].year)
-        yearscore = 1 - (np.linalg.norm(unum - pnum) / np.linalg.norm(2023-2020))
+        yearscore = 1 - (np.linalg.norm(unum - pnum) / np.linalg.norm(2024-2020))
 
         # Calculate waking/sleeping time score partition 40%
-        nd = datetime(1,1,1)
-        wtimeu = datetime.combine(nd, user[0][0].waking)
-        wtimep = datetime.combine(nd, potential[0].waking)
-        stimeu = datetime.combine(nd, user[0][0].sleeping)
-        stimep = datetime.combine(nd, potential[0].sleeping)
-        waking_diff_hrs = (wtimeu - wtimep).total_seconds() / 3600
-        sleeping_diff_hrs = (stimeu - stimep).total_seconds() / 3600
+        waking_diff_hrs = min_time(user[0][0].waking, potential[0].waking)
+        sleeping_diff_hrs = min_time(user[0][0].sleeping,
+                                        potential[0].sleeping)
         origin = np.array([0,0])
         point = np.array([waking_diff_hrs, sleeping_diff_hrs])
         highest = np.array([12,12])
