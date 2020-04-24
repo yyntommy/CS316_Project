@@ -1,0 +1,13 @@
+Member Contributions
+
+Brandon Zhao - 
+
+Milestone 1: Helped write project proposal, Did SQL test case programming
+
+Milestone 2: 
+
+Final Demo: Helped resolve a couple issues on backend, mainly with filter (implemented flexible time fields and fixed filtering for sleeping/waking times, also added room type preference to filter)
+
+Also helped Ashley to make CSS for about page, and fixed miscellaneous CSS bugs throughout (mainly with picture/box alignment)
+
+Wrote 2 slides in the final presentation
