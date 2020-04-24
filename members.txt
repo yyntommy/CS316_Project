@@ -11,3 +11,11 @@ Final Demo: Helped resolve a couple issues on backend, mainly with filter (imple
 Also helped Ashley to make CSS for about page, and fixed miscellaneous CSS bugs throughout (mainly with picture/box alignment)
 
 Wrote 2 slides in the final presentation
+
+Ashley Murray - 
+
+Milestone 1: wrote the python code to generate sample dataset, which was built upon by other members. Helped create load.sql.
+
+Milestone 2: built upon the html framework to add more design elements. Worked with fixing all the elements using CSS, helped by Brandon Xie and Brandon Zhao . Created icons in Photoshop for added user experience. 
+
+Webscrapped a website that helps people find roommates for the sample dataset in the Blog_Post table. Created the second load.sql in order to load in these blog posts into the database. Worked on the final presentation, and fixing other bugs found in the site for the demo. 
