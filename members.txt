@@ -18,7 +18,7 @@ Milestone 1: wrote the python code to generate sample dataset, which was built u
 
 Milestone 2: built upon the html framework to add more design elements.  Created icons in Photoshop for added user experience. 
 
-Worked with fixing all the elements using CSS, helped by Brandon Xie and Brandon Zhao. 
+Worked with fixing all the elements using CSS, helped by Brandon Xie and Brandon Zhao. Created the overall design for a better UX/UI. 
 
 Webscrapped a website that helps people find roommates for the sample dataset in the Blog_Post table. Created the second load.sql in order to load in these blog posts into the database. Worked on the final presentation, and fixing other bugs found in the site for the demo. 
 
