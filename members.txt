@@ -34,7 +34,7 @@ Yuning (Tommy) Yang -
 
 Milestone 1: Came up with the idea of the project. Designed E/R diagram and the database. Made create.sql.
 
-Milestone 2: Basically worked as a full stack engineer.
+Milestone 2: Basically worked on full stack.
 
 Frontend: built the whole web interface with Flask and Jinja, including user registration, login logout, account page, match page, and home showing all the blog posts.
 
