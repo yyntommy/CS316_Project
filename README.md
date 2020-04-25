@@ -2,6 +2,10 @@
 
 ## Getting Started with the App
 
+### Deployment
+
+Deployed on Heroku: https://project-316.herokuapp.com/
+
 ### Deploying on Local
 
 1. Pull the repo.
@@ -24,7 +28,7 @@ After installing homebrew, run brew doctor to make sure everything will work cor
 
 ## Overview of Code Structure
 
-...
+The web is made with Flask, Jinja HTML, CSS, JavaScript(JQuery), raw SQL, and SQLAlchemy. We used blueprints from flask to break down the app into different components, such as users, core, blogposts, match, etc. The blueprints also took care of routing. We mainly used python for backend, and for the most of the time, the backend receives user inputs via wtforms. In term of the database, we used raw sql to create tables and load dataset. But for queries, we used SQLAlchemy, which is safe from injection attacks. Under our main source folder, we have a folder for each component, in which we have views.py (for backend) and forms.py (all of the wtforms). We also have a template folder that contains all of the html templates (frontend). On top of that, we have a file models.py (SQLAlchemy) which corresponds to our database model. 
 
 ## Current Implementation Limitations
 
