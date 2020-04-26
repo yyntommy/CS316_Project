@@ -20,7 +20,7 @@ Milestone 2: built upon the html framework to add more design elements.  Created
 
 Was primarily responsible for the frontend design, worked with fixing all the elements using CSS. Created the overall design for a better UX/UI.
 
-Final Demo: Webscrapped a website that helps people find roommates for the sample dataset in the Blog_Post table. Created the second load.sql in order to load in these blog posts into the database. Worked on the final presentation, and fixing other bugs found in the site for the demo. Finished the CSS elements.
+Final Demo: Webscrapped a website that helps people find roommates for the sample dataset in the Blog_Post table. Created the second load.sql in order to load in these blog posts into the database. Worked on the final presentation, and fixing other bugs found in the site for the demo. Finished the CSS elements for the home page, registration, create post, match, account, blog posts, and user pages. Edited the forms.py to make it uniform across all form pages.
 
 Niko Hobart -
 
