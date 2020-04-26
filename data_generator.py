@@ -69,13 +69,13 @@ def get_new_userlikes(users):
     return userlikes
 
 def main():
-    users, nids = get_new_users(1000)
+    users, nids = get_new_users(1500)
     usermajors = get_new_usermajors(nids)
     userlikes = get_new_userlikes(nids)
 
     aggregate = users + usermajors + userlikes
 
-    f = open("load1.sql", "w+")
+    f = open("load3.sql", "w+")
     for line in aggregate:
         insert = line + "\n"
         f.write(insert)
