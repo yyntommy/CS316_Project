@@ -43,3 +43,11 @@ Backend: CRDU (create, read, delete, update) of users with their housing prefere
 Database: Worked with Niko to translate create.sql into models.py (SQLAlchemy)
 
 Final Demo: Made a filter for the matching page, allowing users to customize their matching results. Deployed our app to Heroku. Cleaned up a few bugs and made pagination to the matching page.
+
+Brandon Xie –
+
+Milestone 1: Helped with project proposal, wrote SQL queries
+
+Milestone 2: 
+
+Final Demo: Changed the background and login design of the website. Added a navigation bar to replace buttons from previous versions and sticky social media sharing icons. Edited slides in the final presentation.
