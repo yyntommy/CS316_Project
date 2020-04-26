@@ -12,6 +12,10 @@ Also helped Ashley to make CSS for about page, and fixed miscellaneous CSS bugs 
 
 Wrote 2 slides in the final presentation
 
+Helped to present in the presentation video, also did the live demo of the website
+
+Made final report
+
 Ashley Murray -
 
 Milestone 1: wrote the python code to generate sample dataset, which was built upon by other members. Helped create load.sql.
