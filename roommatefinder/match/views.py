@@ -1,7 +1,7 @@
 # core/views.py
 from roommatefinder import db
 from roommatefinder.models import User, UserMajor, UserLikes
-from flask import render_template,url_for,flash,redirect,request,Blueprint, jsonify
+from flask import render_template,url_for,flash,redirect,request,Blueprint, jsonify, g
 from flask_login import current_user
 import numpy as np
 from datetime import datetime, timedelta
@@ -22,8 +22,11 @@ class PageResult:
         self.__dict__ = dict(zip(['data', 'page', 'number'], [data, page, number]))
         self.full_listing = [self.data[i:i+number] for i in range(0, len(self.data), number)]
     def __iter__(self):
-        for i in self.full_listing[self.page-1]:
-            yield i
+        if len(self.full_listing)==0:
+            return []
+        else:
+            for i in self.full_listing[self.page-1]:
+                yield i
     def iter_pages(self, left_edge=1, left_current=1,
                    right_current=1, right_edge=2,pages=1):
         last = 0
