@@ -12,6 +12,10 @@ Also helped Ashley to make CSS for about page, and fixed miscellaneous CSS bugs 
 
 Wrote 2 slides in the final presentation
 
+Helped to present in the presentation video, also did the live demo of the website
+
+Made final report
+
 Ashley Murray -
 
 Milestone 1: wrote the python code to generate sample dataset, which was built upon by other members. Helped create load.sql.
@@ -20,7 +24,7 @@ Milestone 2: built upon the html framework to add more design elements.  Created
 
 Was primarily responsible for the frontend design, worked with fixing all the elements using CSS. Created the overall design for a better UX/UI.
 
-Final Demo: Webscrapped a website that helps people find roommates for the sample dataset in the Blog_Post table. Created the second load.sql in order to load in these blog posts into the database. Worked on the final presentation, and fixing other bugs found in the site for the demo. Finished the CSS elements.
+Final Demo: Webscrapped a website that helps people find roommates for the sample dataset in the Blog_Post table. Created the second load.sql in order to load in these blog posts into the database. Worked on the final presentation, and fixing other bugs found in the site for the demo. Finished the CSS elements for the home page, registration, create post, match, account, blog posts, and user pages. Edited the forms.py to make it uniform across all form pages.
 
 Niko Hobart -
 
@@ -43,3 +47,11 @@ Backend: CRDU (create, read, delete, update) of users with their housing prefere
 Database: Worked with Niko to translate create.sql into models.py (SQLAlchemy)
 
 Final Demo: Made a filter for the matching page, allowing users to customize their matching results. Deployed our app to Heroku. Cleaned up a few bugs and made pagination to the matching page.
+
+Brandon Xie –
+
+Milestone 1: Helped with project proposal, wrote SQL queries
+
+Milestone 2: 
+
+Final Demo: Changed the background and login design of the website. Added a navigation bar to replace buttons from previous versions and sticky social media sharing icons. Edited slides in the final presentation.
